@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlb6vlwg3gc2d"]
+
+[ext_resource type="Script" uid="uid://cj47ur1e5yuoh" path="res://src/scripts/enemy_heavy.gd" id="1_w0176"]
+[ext_resource type="Texture2D" uid="uid://ckml2x48hr5sv" path="res://src/assets/kenney_new-platformer-pack-1.1/Spritesheets/spritesheet-characters-default.png" id="2_dcdgc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhusy"]
+atlas = ExtResource("2_dcdgc")
+region = Rect2(640, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho0i1"]
+atlas = ExtResource("2_dcdgc")
+region = Rect2(512, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tpnt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhusy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho0i1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0176"]
+size = Vector2(103, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcdgc"]
+size = Vector2(95, 85)
+
+[node name="EnemyHeavy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_w0176")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.536743e-07, 0.7499981)
+scale = Vector2(1.2265625, 1.3554688)
+sprite_frames = SubResource("SpriteFrames_8tpnt")
+frame_progress = 0.49067467
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 23)
+shape = SubResource("RectangleShape2D_w0176")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(3.5, 44.5)
+shape = SubResource("RectangleShape2D_dcdgc")
+debug_color = Color(0.8959349, 0.194846, 0.62849724, 0.41960785)

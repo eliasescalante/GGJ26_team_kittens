@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck8duk3o6pumv"]
+
+[ext_resource type="Script" uid="uid://dnksajciyvdtb" path="res://src/scripts/player.gd" id="1_swhsd"]
+[ext_resource type="Texture2D" uid="uid://dh8o63u7u6dqg" path="res://src/assets/kenney_new-platformer-pack-1.1/Spritesheets/spritesheet-characters-double.png" id="2_qopur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n52bt"]
+atlas = ExtResource("2_qopur")
+region = Rect2(1024, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx3ie"]
+atlas = ExtResource("2_qopur")
+region = Rect2(512, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gf5d"]
+atlas = ExtResource("2_qopur")
+region = Rect2(256, 1536, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qopur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n52bt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx3ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gf5d")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n52bt"]
+size = Vector2(76, 90)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 12
+script = ExtResource("1_swhsd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.9999962, -2.9999962)
+scale = Vector2(0.48046875, 0.47265625)
+sprite_frames = SubResource("SpriteFrames_qopur")
+animation = &"walk_right"
+frame_progress = 0.59320647
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 12)
+shape = SubResource("RectangleShape2D_n52bt")
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgk0f4nn83qvh"]
+
+[ext_resource type="Script" uid="uid://fgjd37esy676" path="res://src/scripts/enemy_crowd.gd" id="1_f38iy"]
+[ext_resource type="Texture2D" uid="uid://vb08nbcjvge7" path="res://src/assets/kenney_new-platformer-pack-1.1/Spritesheets/spritesheet-enemies-double.png" id="2_03q87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ud7o"]
+atlas = ExtResource("2_03q87")
+region = Rect2(256, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scjkw"]
+atlas = ExtResource("2_03q87")
+region = Rect2(384, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akcds"]
+atlas = ExtResource("2_03q87")
+region = Rect2(512, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy73k"]
+atlas = ExtResource("2_03q87")
+region = Rect2(640, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g13ub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ud7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scjkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akcds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy73k")
+}],
+"loop": true,
+"name": &"crowd",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f38iy"]
+size = Vector2(213, 199.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03q87"]
+size = Vector2(171, 140)
+
+[node name="EnemyCrowd" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_f38iy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8146973e-06, -1.0000114)
+scale = Vector2(1.90625, 1.890625)
+sprite_frames = SubResource("SpriteFrames_g13ub")
+animation = &"crowd"
+frame_progress = 0.5555456
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 17.75)
+shape = SubResource("RectangleShape2D_f38iy")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(3.5, 41)
+shape = SubResource("RectangleShape2D_03q87")
+debug_color = Color(0.8922174, 0.16636124, 0.6840652, 0.41960785)

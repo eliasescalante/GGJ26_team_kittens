@@ -35,5 +35,3 @@ func take_hit(amount):
 	await animation.animation_finished
 	animation.play("RESET")
 	
-	
-	

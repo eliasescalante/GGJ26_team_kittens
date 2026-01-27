@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck8duk3o6pumv"]
+[gd_scene format=3 uid="uid://ck8duk3o6pumv"]
 
 [ext_resource type="Script" uid="uid://dnksajciyvdtb" path="res://src/scripts/player.gd" id="1_swhsd"]
 [ext_resource type="Texture2D" uid="uid://dh8o63u7u6dqg" path="res://src/assets/kenney_new-platformer-pack-1.1/Spritesheets/spritesheet-characters-double.png" id="2_qopur"]
@@ -59,6 +59,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n52bt"]
 size = Vector2(75, 51)
 
+[sub_resource type="Animation" id="Animation_cx3ie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/flash_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:use_parent_material")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_n52bt"]
 resource_name = "hit_flash"
 length = 0.2
@@ -87,44 +114,17 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_cx3ie"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/flash_amount")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:use_parent_material")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6gf5d"]
 _data = {
 &"RESET": SubResource("Animation_cx3ie"),
 &"hit_flash": SubResource("Animation_n52bt")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=2082538041]
 collision_mask = 12
 script = ExtResource("1_swhsd")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1189423300]
 material = SubResource("ShaderMaterial_cx3ie")
 position = Vector2(2.9999962, -0.9999963)
 scale = Vector2(0.48046875, 0.47265625)
@@ -132,13 +132,11 @@ sprite_frames = SubResource("SpriteFrames_qopur")
 animation = &"walk_right"
 frame_progress = 0.59320647
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1212633496]
 position = Vector2(2.5, 31.5)
 shape = SubResource("RectangleShape2D_n52bt")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1836736775]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_6gf5d")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=56974874]
+libraries/ = SubResource("AnimationLibrary_6gf5d")

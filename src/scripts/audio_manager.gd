@@ -1,6 +1,6 @@
 extends Node
 
-@onready var music_player = $music # Asegúrate de que el nombre coincida
+@onready var music_player = $music
 
 func play_music():
 	if not music_player.playing:

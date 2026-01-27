@@ -3,6 +3,11 @@ extends CharacterBody2D
 @export var speed := 250.0 # Un poco más rápido para esquivar mejor
 
 @onready var anim := $AnimatedSprite2D
+@onready var animation := $AnimationPlayer
+
+
+func _ready() -> void:
+	AudioManager.play_music()
 
 func _physics_process(_delta):
 	# Obtenemos entrada para ambos ejes
@@ -18,11 +23,17 @@ func update_animation(dir_x: float):
 		if velocity.y == 0:
 			anim.play("idle")
 		else:
-			anim.play("walk_right") # O una animación de caminar vertical si tienes
+			anim.play("walk_right")
 	else:
 		anim.play("walk_right")
 		anim.flip_h = dir_x < 0
 
 func take_hit(amount):
 	print("¡Auch! Daño recibido: ", amount)
-	# Aquí podrías restar vida o disparar una señal al HUD
+	GameManager.lose_life()
+	animation.play("hit_flash")
+	await animation.animation_finished
+	animation.play("RESET")
+	
+	
+	

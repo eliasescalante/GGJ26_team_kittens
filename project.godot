@@ -11,12 +11,19 @@ config_version=5
 [application]
 
 config/name="GGJ26 grupo Kittens - sin nombre"
+run/main_scene="uid://dp0x3uflt72um"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://src/scripts/GameManager.gd"
+AudioManager="*res://src/scenes/AudioManager.tscn"
 
 [file_customization]
 
 folder_colors={
+"res://src/": "purple",
 "res://src/assets/": "red",
 "res://src/scenes/": "orange",
 "res://src/scripts/": "yellow"

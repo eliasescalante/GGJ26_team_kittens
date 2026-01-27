@@ -22,13 +22,13 @@ func _process(delta):
 	
 	# Manejo de enemigos comunes (Normal, Fast, Heavy) cada 1.5 - 2 segundos
 	timer_normal += delta
-	if timer_normal >= 1.8:
+	if timer_normal >= 0.5:
 		spawn_specific_enemy(choose_random_basic())
 		timer_normal = 0.0
 		
 	# Manejo del Crowd (cada 10 segundos)
 	timer_crowd += delta
-	if timer_crowd >= 10.0:
+	if timer_crowd >= 15.0:
 		spawn_specific_enemy(enemy_crowd)
 		timer_crowd = 0.0
 

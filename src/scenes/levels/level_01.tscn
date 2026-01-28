@@ -4777,15 +4777,19 @@ tile_set = SubResource("TileSet_lo748")
 [node name="Player" parent="." unique_id=1830401875 instance=ExtResource("4_yfpvf")]
 position = Vector2(106, 376)
 
-[node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967]
+[node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967 node_paths=PackedStringArray("marker_top", "marker_bottom")]
 script = ExtResource("5_yfpvf")
 enemy_crowd = ExtResource("6_naqav")
+marker_top = NodePath("Top")
+marker_bottom = NodePath("Bottom")
 
 [node name="Top" type="Marker2D" parent="SpawnArea" unique_id=475651208]
-position = Vector2(959, 405)
+unique_name_in_owner = true
+position = Vector2(955, 425)
 
 [node name="Bottom" type="Marker2D" parent="SpawnArea" unique_id=1720814616]
-position = Vector2(961, 500)
+unique_name_in_owner = true
+position = Vector2(957, 453)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=500262467]
 

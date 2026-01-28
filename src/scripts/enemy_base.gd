@@ -9,7 +9,6 @@ extends CharacterBody2D
 var player_ref: CharacterBody2D = null
 
 func _ready():
-	# Usamos grupos para no fallar en la referencia
 	player_ref = get_tree().get_first_node_in_group("player") as CharacterBody2D
 	if anim:
 		anim.play("walk")

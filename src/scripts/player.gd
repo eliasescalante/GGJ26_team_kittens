@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 150
+@export var speed = 100
 @export var shake_intensity = 10.0
 @export var shake_duration = 0.3
 

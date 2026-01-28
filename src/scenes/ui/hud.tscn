@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://b5yv5dlvqhh8t"]
 
 [ext_resource type="Script" uid="uid://baviu140wsqie" path="res://src/scripts/hud.gd" id="1_mr4ol"]
-[ext_resource type="FontFile" uid="uid://dali4ljjhv3a0" path="res://src/assets/fonts/Bitcount_Grid_Single/static/BitcountGridSingle-ExtraBold.ttf" id="2_m12ob"]
+[ext_resource type="FontFile" uid="uid://bnltvm0mckpva" path="res://src/assets/fonts/press_start_2p__regular.ttf" id="2_m12ob"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q3cwv"]
 font = ExtResource("2_m12ob")
-font_size = 50
+font_size = 20
+font_color = Color(0.91475755, 0.88310987, 0.9212822, 1)
 
 [node name="Hud" type="Control" unique_id=39451456]
 layout_mode = 3
@@ -15,7 +16,7 @@ script = ExtResource("1_mr4ol")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1185016835]
 layout_mode = 0
 offset_right = 638.0
-offset_bottom = 53.0
+offset_bottom = 44.0
 color = Color(0.019607844, 0.019607844, 0.019607844, 0.42352942)
 
 [node name="LifeContainer" type="HBoxContainer" parent="." unique_id=288097152]

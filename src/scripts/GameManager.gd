@@ -12,7 +12,6 @@ func lose_life():
 	if player_lives <=0:
 		print("perdi")
 		return
-	# ¡IMPORTANTE! Usar 'self.' para que el setter se ejecute
 	self.player_lives -= 1 
 	print("Manager: Vida restada. Ahora tengo: ", player_lives)
 	

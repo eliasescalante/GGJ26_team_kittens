@@ -57,7 +57,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n52bt"]
-size = Vector2(75, 51)
+size = Vector2(48, 51)
 
 [sub_resource type="Animation" id="Animation_cx3ie"]
 length = 0.001
@@ -126,14 +126,14 @@ script = ExtResource("1_swhsd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1189423300]
 material = SubResource("ShaderMaterial_cx3ie")
-position = Vector2(2.9999962, -0.9999963)
-scale = Vector2(0.48046875, 0.47265625)
+position = Vector2(1.0000019, -1)
+scale = Vector2(0.2402344, 0.24804688)
 sprite_frames = SubResource("SpriteFrames_qopur")
 animation = &"walk_right"
 frame_progress = 0.59320647
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1212633496]
-position = Vector2(2.5, 31.5)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_n52bt")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1836736775]

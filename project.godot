@@ -14,8 +14,9 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="GGJ26 grupo Kittens - sin nombre"
-run/main_scene="uid://dp0x3uflt72um"
+config/name="GGJ26 grupo Kittens - Foxanxiety"
+config/description="s"
+run/main_scene="uid://bphyccs28s8db"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -47,6 +48,11 @@ player=""
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
+textures/snap/snap_2d_vertices_to_pixel=true
+textures/description="s"
+textures/name="GGJ26 grupo Kittens - Foxanxiety"

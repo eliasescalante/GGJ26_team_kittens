@@ -1,3 +1,66 @@
 [gd_scene format=3 uid="uid://brb7glyq17jwd"]
 
-[node name="Credits" type="Node2D" unique_id=1803687688]
+[ext_resource type="Texture2D" uid="uid://dvb6ehorb4wmr" path="res://src/assets/backgrounds/background_temp.png" id="1_l4too"]
+[ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="2_jicit"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jnfk"]
+bg_color = Color(0.6, 0.23921569, 0.25490198, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6, 0.49803922, 0.4509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5if85"]
+bg_color = Color(0.8039216, 0.40784314, 0.23921569, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Credits" type="Control" unique_id=1941526240]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backgorund" type="TextureRect" parent="." unique_id=907126552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l4too")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1296436224]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 72.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="Back" type="Button" parent="Margin" unique_id=1729996936]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("2_jicit")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3jnfk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5if85")
+text = "Back"

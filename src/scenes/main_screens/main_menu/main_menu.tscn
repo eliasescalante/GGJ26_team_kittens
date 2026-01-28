@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bphyccs28s8db"]
 
 [ext_resource type="Texture2D" uid="uid://dvb6ehorb4wmr" path="res://src/assets/backgrounds/background_temp.png" id="1_7nhe2"]
+[ext_resource type="Script" uid="uid://crlx3ady2lrmm" path="res://src/scenes/main_screens/main_menu/main_menu.gd" id="1_8rfqw"]
 [ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="1_12k4a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12k4a"]
@@ -94,6 +95,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8rfqw")
 
 [node name="Backgorund" type="TextureRect" parent="." unique_id=803777027]
 layout_mode = 1
@@ -166,3 +168,5 @@ theme = ExtResource("1_12k4a")
 text = "Foxanxiety"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Start" to="." method="_on_start_pressed"]

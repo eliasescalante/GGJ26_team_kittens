@@ -25,7 +25,6 @@ func _process(delta):
 	if timer_crowd >= current_spawn_interval:
 		timer_crowd = 0.0
 		spawn_horde()
-		# Progresión de dificultad
 		if current_spawn_interval > min_spawn_interval:
 			current_spawn_interval = current_spawn_interval - difficulty_step
 			if current_spawn_interval < min_spawn_interval:
@@ -61,7 +60,6 @@ func spawn_horde():
 		
 	get_tree().current_scene.add_child(instance)
 	
-	# Rotación visual si viene desde la izquierda
 	if instance.speed < 0:
 		_flip_sprite(instance)
 

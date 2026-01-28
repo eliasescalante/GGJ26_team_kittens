@@ -1,19 +1,18 @@
 extends CharacterBody2D
 
-@export var speed := 250.0
+@export var speed := 150
 
 @onready var anim := $AnimatedSprite2D
 @onready var animation := $AnimationPlayer
 
 
 func _ready() -> void:
-	AudioManager.play_music()
 	add_to_group("player")
 
 func _physics_process(_delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
-	velocity = input_dir * speed
+	velocity = input_dir * speed 
 	move_and_slide()
 
 	update_animation(input_dir.x)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5yv5dlvqhh8t"]
+[gd_scene format=3 uid="uid://b5yv5dlvqhh8t"]
 
 [ext_resource type="Script" uid="uid://baviu140wsqie" path="res://src/scripts/hud.gd" id="1_mr4ol"]
 [ext_resource type="FontFile" uid="uid://dali4ljjhv3a0" path="res://src/assets/fonts/Bitcount_Grid_Single/static/BitcountGridSingle-ExtraBold.ttf" id="2_m12ob"]
@@ -7,24 +7,25 @@
 font = ExtResource("2_m12ob")
 font_size = 50
 
-[node name="Hud" type="Control"]
+[node name="Hud" type="Control" unique_id=39451456]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mr4ol")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1185016835]
 layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 103.0
+offset_right = 638.0
+offset_bottom = 53.0
 color = Color(0.019607844, 0.019607844, 0.019607844, 0.42352942)
 
-[node name="LifeContainer" type="HBoxContainer" parent="."]
+[node name="LifeContainer" type="HBoxContainer" parent="." unique_id=288097152]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LifeCountLabel" type="Label" parent="LifeContainer"]
+[node name="LifeCountLabel" type="Label" parent="LifeContainer" unique_id=1506242505]
 unique_name_in_owner = true
 layout_mode = 2
 text = "vidas"
 label_settings = SubResource("LabelSettings_q3cwv")
+horizontal_alignment = 1

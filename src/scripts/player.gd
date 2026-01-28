@@ -7,8 +7,8 @@ extends CharacterBody2D
 
 
 func _ready() -> void:
-	add_to_group("player")
 	AudioManager.play_music()
+	add_to_group("player")
 
 func _physics_process(_delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

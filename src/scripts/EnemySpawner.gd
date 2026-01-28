@@ -39,7 +39,6 @@ func spawn_horde():
 	var offset = (get_viewport_rect().size.x / 2.0) + 150.0
 	var p_pos = player.global_position
 	
-	# Lógica plana para evitar errores de sintaxis en Godot 4.6
 	if cycle == 0:
 		instance.global_position = Vector2(p_pos.x + offset, marker_bottom.global_position.y)
 		instance.speed = 150.0

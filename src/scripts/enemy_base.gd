@@ -14,11 +14,9 @@ func _ready():
 		anim.play("walk")
 
 func _physics_process(_delta):
-	# Movimiento: si speed es positivo va a la izquierda, si es negativo a la derecha
 	velocity.x = -speed
 	move_and_slide()
 
-	# Limpieza de seguridad si se alejan mucho
 	if player_ref:
 		var distancia = abs(global_position.x - player_ref.global_position.x)
 		if distancia > 2500:

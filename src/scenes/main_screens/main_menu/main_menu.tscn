@@ -171,3 +171,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Exit" to="." method="_on_exit_pressed"]

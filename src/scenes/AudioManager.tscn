@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwxbr5o67vhsb"]
 
 [ext_resource type="Script" uid="uid://70cexwdqx8mi" path="res://src/scripts/audio_manager.gd" id="1_k0bi8"]
-[ext_resource type="AudioStream" uid="uid://klsm4m21mwyp" path="res://src/assets/Quincas Moreira - Robot City.mp3" id="2_0w07p"]
+[ext_resource type="AudioStream" uid="uid://d0fmidrx1gtur" path="res://src/assets/Gameplay_DEMO.mp3" id="2_0w07p"]
 
 [node name="AudioManager" type="Node2D" unique_id=407469307]
 script = ExtResource("1_k0bi8")

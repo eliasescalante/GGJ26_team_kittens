@@ -1,6 +1,6 @@
 extends "res://src/scripts/enemy_base.gd"
 
-var masking_time_required: float = 3
+var masking_time_required: float = 2
 var current_masking_time: float = 0.0
 var is_player_inside: bool = false
 var is_masking_complete: bool = false

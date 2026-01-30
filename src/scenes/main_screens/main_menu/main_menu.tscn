@@ -4,9 +4,6 @@
 [ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="1_12k4a"]
 [ext_resource type="Texture2D" uid="uid://q2aows5a4n5k" path="res://src/assets/player fox-Sheet-Sheet.png" id="3_8rfqw"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jtdj0"]
-load_path = "res://.godot/imported/background_temp.png-7b95c3bfece841a2ae0732b43307ab70.ctex"
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12k4a"]
 bg_color = Color(0.27058825, 0.16078432, 0.24705882, 1)
 border_width_left = 6
@@ -122,14 +119,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8rfqw")
 
-[node name="Backgorund" type="TextureRect" parent="." unique_id=803777027]
+[node name="Backgorund" type="ColorRect" parent="." unique_id=1277768199]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CompressedTexture2D_jtdj0")
+color = Color(0.47843137, 0.1882353, 0.27058825, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1640059495]
 layout_mode = 1
@@ -190,6 +187,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme = ExtResource("1_12k4a")
+theme_override_colors/font_outline_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 26
 text = "Crowd Surfer"
 horizontal_alignment = 1
 vertical_alignment = 1

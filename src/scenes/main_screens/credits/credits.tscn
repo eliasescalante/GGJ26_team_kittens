@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://brb7glyq17jwd"]
 
 [ext_resource type="Script" uid="uid://bk12c7mprmte6" path="res://src/scenes/main_screens/credits/credits.gd" id="1_5if85"]
-[ext_resource type="Texture2D" uid="uid://dvb6ehorb4wmr" path="res://src/assets/backgrounds/background_temp.png" id="1_l4too"]
 [ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="2_jicit"]
 [ext_resource type="FontFile" uid="uid://bnltvm0mckpva" path="res://src/assets/fonts/press_start_2p__regular.ttf" id="3_i7o0k"]
 
@@ -38,14 +37,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5if85")
 
-[node name="Backgorund" type="TextureRect" parent="." unique_id=907126552]
+[node name="Backgorund" type="ColorRect" parent="." unique_id=280897027]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_l4too")
+color = Color(0.47843137, 0.1882353, 0.27058825, 1)
 
 [node name="MarginText" type="MarginContainer" parent="." unique_id=990008017]
 layout_mode = 1

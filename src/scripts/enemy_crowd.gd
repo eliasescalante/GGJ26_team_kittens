@@ -1,6 +1,6 @@
 extends "res://src/scripts/enemy_base.gd"
 
-var masking_time_required: float = 2.0
+var masking_time_required: float = 3
 var current_masking_time: float = 0.0
 var is_player_inside: bool = false
 var is_masking_complete: bool = false
@@ -43,7 +43,7 @@ func _on_masking_success() -> void:
 func _on_masking_started(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_player_inside = true
-		speed = speed * 0.5 
+		speed = speed * 1
 		current_masking_time = 0.0
 
 func _on_masking_ended(body: Node2D) -> void:

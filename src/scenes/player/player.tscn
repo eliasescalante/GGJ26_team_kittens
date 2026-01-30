@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ck8duk3o6pumv"]
 
 [ext_resource type="Script" uid="uid://dnksajciyvdtb" path="res://src/scripts/player.gd" id="1_swhsd"]
-[ext_resource type="Texture2D" uid="uid://dh8o63u7u6dqg" path="res://src/assets/kenney_new-platformer-pack-1.1/Spritesheets/spritesheet-characters-double.png" id="2_qopur"]
+[ext_resource type="Texture2D" uid="uid://q2aows5a4n5k" path="res://src/assets/player fox-Sheet-Sheet.png" id="2_qopur"]
 
 [sub_resource type="Shader" id="Shader_qopur"]
 code = "shader_type canvas_item;
@@ -24,21 +24,28 @@ shader_parameter/flash_amount = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n52bt"]
 atlas = ExtResource("2_qopur")
-region = Rect2(1024, 1280, 256, 256)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cx3ie"]
 atlas = ExtResource("2_qopur")
-region = Rect2(512, 1536, 256, 256)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6gf5d"]
 atlas = ExtResource("2_qopur")
-region = Rect2(256, 1536, 256, 256)
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh6av"]
+atlas = ExtResource("2_qopur")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qopur"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n52bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx3ie")
 }],
 "loop": true,
 "name": &"idle",
@@ -46,10 +53,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cx3ie")
+"texture": SubResource("AtlasTexture_6gf5d")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6gf5d")
+"texture": SubResource("AtlasTexture_lh6av")
 }],
 "loop": true,
 "name": &"walk_right",
@@ -57,7 +64,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n52bt"]
-size = Vector2(48, 24.5)
+size = Vector2(60, 39.5)
 
 [sub_resource type="Animation" id="Animation_cx3ie"]
 length = 0.001
@@ -126,14 +133,14 @@ script = ExtResource("1_swhsd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1189423300]
 material = SubResource("ShaderMaterial_cx3ie")
-position = Vector2(1.0000019, -1)
-scale = Vector2(0.2402344, 0.24804688)
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(1.9720459, 2.0115967)
 sprite_frames = SubResource("SpriteFrames_qopur")
 animation = &"walk_right"
-frame_progress = 0.59320647
+frame_progress = 0.16824491
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1212633496]
-position = Vector2(0, 20.25)
+position = Vector2(1, 14.75)
 shape = SubResource("RectangleShape2D_n52bt")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1836736775]

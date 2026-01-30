@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://bphyccs28s8db"]
 
-[ext_resource type="Texture2D" uid="uid://dvb6ehorb4wmr" path="res://src/assets/backgrounds/background_temp.png" id="1_7nhe2"]
 [ext_resource type="Script" uid="uid://crlx3ady2lrmm" path="res://src/scenes/main_screens/main_menu/main_menu.gd" id="1_8rfqw"]
 [ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="1_12k4a"]
+[ext_resource type="Texture2D" uid="uid://q2aows5a4n5k" path="res://src/assets/player fox-Sheet-Sheet.png" id="3_8rfqw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jtdj0"]
+load_path = "res://.godot/imported/background_temp.png-7b95c3bfece841a2ae0732b43307ab70.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12k4a"]
 bg_color = Color(0.27058825, 0.16078432, 0.24705882, 1)
@@ -88,6 +91,28 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uym0"]
+atlas = ExtResource("3_8rfqw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqiv2"]
+atlas = ExtResource("3_8rfqw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmhnw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uym0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqiv2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainMenu" type="Control" unique_id=2007172681]
 layout_mode = 3
 anchors_preset = 15
@@ -104,7 +129,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7nhe2")
+texture = SubResource("CompressedTexture2D_jtdj0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1640059495]
 layout_mode = 1
@@ -168,6 +193,14 @@ theme = ExtResource("1_12k4a")
 text = "Crowd Surfer"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer" unique_id=2031101194]
+unique_name_in_owner = true
+modulate = Color(1, 0.79607844, 1, 1)
+position = Vector2(433.00003, 185)
+scale = Vector2(6.15625, 7.1875)
+sprite_frames = SubResource("SpriteFrames_lmhnw")
+frame_progress = 0.007707303
 
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Credits" to="." method="_on_credits_pressed"]

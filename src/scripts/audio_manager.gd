@@ -1,6 +1,7 @@
 extends Node
 
 @onready var music_player = $music
+@onready var menu = $MenuDemo
 
 func play_music():
 	if not music_player.playing:
@@ -8,3 +9,10 @@ func play_music():
 
 func stop_music():
 	music_player.stop()
+	
+func menu_play():
+	if not menu.playing:
+		menu.play()
+
+func menu_stop():
+	menu.stop()

@@ -15,8 +15,14 @@ func lose_life():
 	if player_lives <=0:
 		print("perdi")
 		return
-	self.player_lives -= 1 
+		
+	player_lives -= 1 
 	print("Manager: Vida restada. Ahora tengo: ", player_lives)
+	
+	if player_lives >= 2:
+		AudioManager.mask_1_play()
+	elif player_lives == 1:
+		AudioManager.mask_2_play()
 	
 	if player_lives <= 0:
 		game_over()

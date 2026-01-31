@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fgjd37esy676" path="res://src/scripts/enemy_crowd.gd" id="1_f38iy"]
 [ext_resource type="Texture2D" uid="uid://3cj1ylppqwkp" path="res://src/assets/npc mob-Sheet.png" id="2_03q87"]
+[ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="3_4ud7o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ud7o"]
 atlas = ExtResource("2_03q87")
@@ -53,3 +54,16 @@ shape = SubResource("RectangleShape2D_f38iy")
 position = Vector2(4, 3.5)
 shape = SubResource("RectangleShape2D_03q87")
 debug_color = Color(0.8922174, 0.16636124, 0.6840652, 0.41960785)
+
+[node name="SaturationBar" type="ProgressBar" parent="." unique_id=1660792366]
+visible = false
+self_modulate = Color(1, 1, 1, 0.78431374)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = -89.0
+offset_right = 97.0
+offset_bottom = -62.0
+grow_horizontal = 2
+theme = ExtResource("3_4ud7o")

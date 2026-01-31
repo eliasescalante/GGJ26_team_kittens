@@ -18,12 +18,18 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if is_player_inside and not is_masking_complete:
+		if not $SaturationBar.visible:
+			$SaturationBar.show()
+			$SaturationBar.max_value = masking_time_required
+		
 		current_masking_time += delta
+		$SaturationBar.value = current_masking_time
 		
 		if player_ref:
 			player_ref.modulate.a = 0.4
 		
 		if current_masking_time >= masking_time_required:
+			$SaturationBar.hide()
 			_on_masking_success()
 
 func _on_masking_success() -> void:

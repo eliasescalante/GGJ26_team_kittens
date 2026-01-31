@@ -42,3 +42,32 @@ func boton_menu_play():
 
 func boton_menu_stop():
 	boton.stop()
+
+func charco_play():
+	if not charco.playing:
+		charco.play()
+
+func charco_stop():
+	charco.stop()
+
+func mask_1_play():
+	if not mask_1.playing:
+		mask_1.play()
+
+func mask_2_play():
+	if not mask_2.playing:
+		mask_2.play()
+
+func crowd_play():
+	if not crowd.playing:
+		crowd.play()
+
+func mask_1_stop():
+	mask_1.stop()
+
+func mask_2_stop():
+	mask_2.stop()
+
+func crowd_stop():
+	crowd.stop()
+	

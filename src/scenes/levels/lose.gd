@@ -7,6 +7,7 @@ func _ready() -> void:
 	
 
 func _on_back_pressed() -> void:
+	AudioManager.crowd_stop()
 	GameManager.restar_game()
 	AudioManager.boton_menu_play()
 	await get_tree().create_timer(0.9).timeout

@@ -5012,6 +5012,7 @@ offset_left = -903.0
 offset_top = 515.0
 offset_right = 9012.0
 offset_bottom = 832.0
+mouse_filter = 2
 color = Color(0.13682574, 0.13682574, 0.13682568, 1)
 
 [node name="WaterTiles" type="Node2D" parent="Background" unique_id=415126889]

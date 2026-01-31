@@ -5,7 +5,7 @@ extends Node2D
 @export var marker_bottom: Marker2D
 
 @export var initial_spawn_interval: float = 6.0 
-@export var min_spawn_interval: float = 2.0      
+@export var min_spawn_interval: float = 2.5      
 @export var difficulty_step: float = 0.5         
 
 var current_spawn_interval: float = 6.0

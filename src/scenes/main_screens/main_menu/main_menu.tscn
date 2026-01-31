@@ -190,8 +190,8 @@ size_flags_vertical = 0
 theme = ExtResource("1_12k4a")
 theme_override_colors/font_outline_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 18
-text = "GAME_TITLE"
+theme_override_font_sizes/font_size = 30
+text = "Crowd Surfer"
 horizontal_alignment = 1
 vertical_alignment = 1
 

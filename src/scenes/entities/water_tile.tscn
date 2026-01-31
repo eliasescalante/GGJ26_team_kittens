@@ -1,20 +1,69 @@
 [gd_scene format=3 uid="uid://dr4gfxmsjokm3"]
 
 [ext_resource type="Script" uid="uid://qhyvua65x07f" path="res://src/scripts/water_tile.gd" id="1_ac3g7"]
+[ext_resource type="Texture2D" uid="uid://gihm41cn0sum" path="res://src/assets/charkito-Sheet.png" id="2_njcgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njcgt"]
-size = Vector2(56, 57)
+size = Vector2(71, 39.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4skg4"]
+atlas = ExtResource("2_njcgt")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8m7t"]
+atlas = ExtResource("2_njcgt")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26xac"]
+atlas = ExtResource("2_njcgt")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1g33"]
+atlas = ExtResource("2_njcgt")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4fkp"]
+atlas = ExtResource("2_njcgt")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4ir3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4skg4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8m7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26xac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1g33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4fkp")
+}],
+"loop": true,
+"name": &"splash",
+"speed": 6.0
+}]
 
 [node name="WaterTile" type="Area2D" unique_id=1306471215]
 script = ExtResource("1_ac3g7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=197519946]
-position = Vector2(2, -1)
+position = Vector2(2.5, 7.75)
 shape = SubResource("RectangleShape2D_njcgt")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=91356950]
-offset_left = -29.0
-offset_top = -29.0
-offset_right = 29.0
-offset_bottom = 27.0
-color = Color(0, 0.69411767, 1, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=305160558]
+position = Vector2(1, 0)
+scale = Vector2(2.1363637, 1.6406251)
+sprite_frames = SubResource("SpriteFrames_v4ir3")
+animation = &"splash"
+frame_progress = 0.1714262

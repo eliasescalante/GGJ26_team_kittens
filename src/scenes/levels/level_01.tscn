@@ -5060,7 +5060,7 @@ region_enabled = true
 region_rect = Rect2(0, 31.229088, 95.75964, 64.77091)
 
 [node name="Player" parent="." unique_id=1830401875 instance=ExtResource("4_yfpvf")]
-position = Vector2(-188, 462)
+position = Vector2(451, 371)
 
 [node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967 node_paths=PackedStringArray("marker_top", "marker_bottom")]
 script = ExtResource("5_yfpvf")

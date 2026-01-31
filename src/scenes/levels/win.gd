@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	AudioManager.crowd_stop()
 
 func _on_back_pressed() -> void:
 	GameManager.restar_game()

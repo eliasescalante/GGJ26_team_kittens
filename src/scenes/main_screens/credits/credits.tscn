@@ -65,9 +65,10 @@ theme_override_constants/margin_bottom = 20
 [node name="Credits" type="RichTextLabel" parent="MarginText" unique_id=808475993]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_i7o0k")
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "[center]
-CREDITS
+text = "[center]CREDITS
+
 
 [url=https://www.instagram.com/dreamscoreaudio/] AGUS  - MUSIC AND SOUND DESIGN[/url]
 

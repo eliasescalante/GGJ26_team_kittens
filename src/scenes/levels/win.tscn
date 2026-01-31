@@ -1,3 +1,113 @@
 [gd_scene format=3 uid="uid://cnsiuv12pq4fb"]
 
-[node name="Win" type="Node2D" unique_id=1507867032]
+[ext_resource type="Texture2D" uid="uid://iimjayliyuga" path="res://src/assets/ending screen-Sheet.png" id="1_364ql"]
+[ext_resource type="Script" uid="uid://dg6pr828qfgua" path="res://src/scenes/levels/win.gd" id="1_efhs2"]
+[ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="2_0mg1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mg1c"]
+atlas = ExtResource("1_364ql")
+region = Rect2(0, 0, 613, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efhs2"]
+atlas = ExtResource("1_364ql")
+region = Rect2(613, 0, 613, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fct7h"]
+atlas = ExtResource("1_364ql")
+region = Rect2(1226, 0, 613, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0nq7"]
+atlas = ExtResource("1_364ql")
+region = Rect2(1839, 0, 613, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mv33i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mg1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efhs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fct7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0nq7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efhs2"]
+bg_color = Color(0.6, 0.23921569, 0.25490198, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6, 0.49803922, 0.4509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fct7h"]
+bg_color = Color(0.8039216, 0.40784314, 0.23921569, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Win" type="Control" unique_id=1084095721]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_efhs2")
+
+[node name="Background" type="ColorRect" parent="." unique_id=151572852]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=1027006699]
+sprite_frames = SubResource("SpriteFrames_mv33i")
+autoplay = "default"
+centered = false
+
+[node name="MarginBack" type="MarginContainer" parent="." unique_id=1603657484]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Back" type="Button" parent="MarginBack" unique_id=370749222]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("2_0mg1c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_efhs2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fct7h")
+text = "Play Again"
+
+[connection signal="pressed" from="MarginBack/Back" to="." method="_on_back_pressed"]

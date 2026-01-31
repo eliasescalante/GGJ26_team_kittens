@@ -1,7 +1,92 @@
 [gd_scene format=3 uid="uid://dwvfaiidk5q3c"]
 
-[node name="Lose" type="Node2D" unique_id=1025325996]
+[ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="1_51kpw"]
+[ext_resource type="Script" uid="uid://c62iy61vy2axc" path="res://src/scenes/levels/lose.gd" id="1_xoewe"]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1704969769]
-offset_right = 670.0
-offset_bottom = 373.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3kbb"]
+bg_color = Color(0.6, 0.23921569, 0.25490198, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6, 0.49803922, 0.4509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jv8c"]
+bg_color = Color(0.8039216, 0.40784314, 0.23921569, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Lose" type="Control" unique_id=862967761]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xoewe")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1704969769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47843137, 0.1882353, 0.27058825, 1)
+
+[node name="Center" type="CenterContainer" parent="Background" unique_id=671270159]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Background/Center" unique_id=1794420175]
+layout_mode = 2
+theme = ExtResource("1_51kpw")
+theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 48
+text = "Game Over"
+
+[node name="MarginBack" type="MarginContainer" parent="." unique_id=1603716257]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_right = 126.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="Back" type="Button" parent="MarginBack" unique_id=329786026]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("1_51kpw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i3kbb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6jv8c")
+text = "Back"
+
+[connection signal="pressed" from="MarginBack/Back" to="." method="_on_back_pressed"]

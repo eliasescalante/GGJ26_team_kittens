@@ -63,7 +63,7 @@ script = ExtResource("1_mr4ol")
 layout_mode = 0
 offset_right = 638.0
 offset_bottom = 57.0
-color = Color(0.019607844, 0.019607844, 0.019607844, 0.42352942)
+color = Color(0, 0, 0, 0.7882353)
 
 [node name="LifeContainer" type="HBoxContainer" parent="." unique_id=288097152]
 layout_mode = 0

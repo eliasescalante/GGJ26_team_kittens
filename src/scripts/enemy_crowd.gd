@@ -46,37 +46,31 @@ func _process(delta):
 			_on_masking_success()
 			AudioManager.crowd_stop()
 
-func _on_masking_success():
-	is_masking_complete = true
-	# Desactivamos colisiones para que no cuente más
-	hitbox.set_deferred("monitoring", false)
-	hitbox.set_deferred("monitorable", false)
-	
-	if player_ref:
-		player_ref.modulate.a = 1.0 
-	
-	# La horda acelera al irse
-	speed = speed * 2.0
-	
-	# Desvanecimiento y borrado
-	var tw = create_tween()
-	tw.tween_property(self, "modulate", Color(1, 1, 1, 0), 1.0)
-	tw.finished.connect(queue_free)
-
 func _on_masking_started(body):
 	if body.is_in_group("player"):
 		is_player_inside = true
 		current_masking_time = 0.0
+		AudioManager.respiracion_play()
+		GameManager.show_masking()
 
 func _on_masking_ended(body):
 	if body.is_in_group("player"):
-		# Si sale antes de tiempo, ¡DAÑO!
-		if not is_masking_complete:
-			if body.has_method("take_hit"):
-				body.take_hit(damage)
-		
 		is_player_inside = false
 		$SaturationBar.hide()
 		
-		if player_ref:
-			player_ref.modulate.a = 1.0
+	# DAÑO SI NO COMPLETÓ
+	if not is_masking_complete:
+		if body.has_method("take_hit"):
+			body.take_hit(damage)
+		AudioManager.respiracion_stop()
+		GameManager.hide_masking()
+
+func _on_masking_success():
+	is_masking_complete = true
+	AudioManager.respiracion_stop()
+	GameManager.hide_masking()
+	
+	if player_ref:
+		player_ref.modulate.a = 1.0
+	speed = speed * 2.0
+	queue_free()

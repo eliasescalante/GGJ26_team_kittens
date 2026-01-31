@@ -5137,6 +5137,16 @@ position = Vector2(957, 439)
 
 [node name="Hud" parent="CanvasLayer" unique_id=14608516 instance=ExtResource("10_8bfcq")]
 
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Hud" unique_id=261007606]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -284.0
+offset_top = -4.0
+offset_right = 902.0
+offset_bottom = 531.0
+color = Color(0, 0, 0, 0.57254905)
+
 [node name="Limits" type="Node2D" parent="." unique_id=413434501]
 
 [node name="limit_bottom" type="StaticBody2D" parent="Limits" unique_id=456150569]

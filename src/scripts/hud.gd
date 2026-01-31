@@ -2,9 +2,14 @@ extends Control
 
 @onready var life_label = $LifeContainer/LifeCountLabel
 @onready var sprite = $LifeContainer/AnimatedSprite2D
+@onready var overlay := $ColorRect2
+
 var vidas_actuales = GameManager.player_lives
 
 func _ready():
+	overlay.visible = false
+	overlay.modulate.a = 0.0
+	GameManager.masking_overlay = overlay
 	# Nos conectamos a la señal del GameManager
 	GameManager.lives_changed.connect(_on_lives_changed)
 	_on_lives_changed(vidas_actuales)

@@ -1,7 +1,10 @@
 extends Node
 
 signal lives_changed(new_lives)
+var masking_overlay: ColorRect = null
 
+var active_stealth_zones = 0
+var player:Node = null
 var player_lives: int = 4:
 	set(value):
 		player_lives = value
@@ -29,3 +32,21 @@ func win():
 	
 func restar_game():
 	player_lives = 4
+	AudioManager.respiracion_stop()
+
+func show_masking():
+	if not masking_overlay:
+		print("Masking overlay todavía no registrado")
+		return
+	masking_overlay.visible = true
+	var t = masking_overlay.create_tween()
+	t.tween_property(masking_overlay, "modulate:a", 0.6, 0.25)
+
+func hide_masking():
+	if not masking_overlay:
+		return
+	var t = masking_overlay.create_tween()
+	t.tween_property(masking_overlay, "modulate:a", 0.0, 0.25)
+	t.finished.connect(func():
+		masking_overlay.visible = false
+	)

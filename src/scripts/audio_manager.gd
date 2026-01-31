@@ -9,6 +9,7 @@ extends Node
 @onready var mask_2 = $SFX/MaskCrack2
 @onready var crowd = $SFX/NpcCrownd
 @onready var respiracion = $SFX/Respiracion
+@onready var mate = $SFX/MateEnCasa
 
 #-----------------------------------------------------------------------------
 #MUSICA DEL JUEGO
@@ -78,3 +79,10 @@ func respiracion_play():
 
 func respiracion_stop():
 	respiracion.stop()
+
+func mate_play():
+	if not mate.playing:
+		mate.play()
+
+func mate_stop():
+	mate.stop()

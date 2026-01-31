@@ -5117,7 +5117,7 @@ tile_map_data = PackedByteArray("AAA+ABUAAAAAAAAAAAA+ABYAAAAAAAEAAAA/ABUAAAABAAA
 tile_set = SubResource("TileSet_a8w1q")
 
 [node name="Player" parent="." unique_id=1830401875 instance=ExtResource("4_yfpvf")]
-position = Vector2(-78, 379)
+position = Vector2(-168, 438)
 
 [node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967 node_paths=PackedStringArray("marker_top", "marker_bottom")]
 script = ExtResource("5_yfpvf")

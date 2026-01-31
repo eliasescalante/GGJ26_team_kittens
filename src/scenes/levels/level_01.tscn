@@ -5022,7 +5022,7 @@ size = Vector2(659, 773)
 size = Vector2(726, 598)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p46a"]
-size = Vector2(269.5, 526.5)
+size = Vector2(82.75, 124.25)
 
 [node name="Level01" type="Node2D" unique_id=1166076922]
 script = ExtResource("1_j0a6s")
@@ -5117,7 +5117,7 @@ tile_map_data = PackedByteArray("AAA+ABUAAAAAAAAAAAA+ABYAAAAAAAEAAAA/ABUAAAABAAA
 tile_set = SubResource("TileSet_a8w1q")
 
 [node name="Player" parent="." unique_id=1830401875 instance=ExtResource("4_yfpvf")]
-position = Vector2(451, 371)
+position = Vector2(-78, 379)
 
 [node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967 node_paths=PackedStringArray("marker_top", "marker_bottom")]
 script = ExtResource("5_yfpvf")
@@ -5173,7 +5173,7 @@ unique_name_in_owner = true
 position = Vector2(-3, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Area2D" unique_id=370818615]
-position = Vector2(6005, 371)
+position = Vector2(5908, 313)
 shape = SubResource("RectangleShape2D_4p46a")
 debug_color = Color(0.6562706, 0.51439816, 0.13589883, 0.41960785)
 

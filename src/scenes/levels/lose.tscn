@@ -142,6 +142,6 @@ layout_mode = 2
 theme = ExtResource("1_51kpw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_i3kbb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6jv8c")
-text = "BUTTON_BACK"
+text = "Jugar de vuetla"
 
 [connection signal="pressed" from="MarginBack/Back" to="." method="_on_back_pressed"]

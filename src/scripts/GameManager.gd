@@ -26,3 +26,6 @@ func game_over():
 func win():
 	AudioManager.stop_music()
 	get_tree().change_scene_to_file("res://src/scenes/levels/win.tscn")
+	
+func restar_game():
+	player_lives = 4

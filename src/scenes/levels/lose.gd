@@ -1,7 +1,10 @@
 extends Control
+@onready var anim = $Animation
 
 func _ready() -> void:
+	anim.play("idle")
 	AudioManager.end_game_play()
+	
 
 func _on_back_pressed() -> void:
 	GameManager.restar_game()

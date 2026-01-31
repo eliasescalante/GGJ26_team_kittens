@@ -2,6 +2,64 @@
 
 [ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="1_51kpw"]
 [ext_resource type="Script" uid="uid://c62iy61vy2axc" path="res://src/scenes/levels/lose.gd" id="1_xoewe"]
+[ext_resource type="Texture2D" uid="uid://coqdhasct45ds" path="res://src/assets/game over screen-Sheet.png" id="2_i3kbb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jv8c"]
+atlas = ExtResource("2_i3kbb")
+region = Rect2(0, 0, 641, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yayn"]
+atlas = ExtResource("2_i3kbb")
+region = Rect2(641, 0, 641, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yffu4"]
+atlas = ExtResource("2_i3kbb")
+region = Rect2(1282, 0, 641, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd3nr"]
+atlas = ExtResource("2_i3kbb")
+region = Rect2(1923, 0, 641, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdygd"]
+atlas = ExtResource("2_i3kbb")
+region = Rect2(2564, 0, 641, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugmrj"]
+atlas = ExtResource("2_i3kbb")
+region = Rect2(3205, 0, 641, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpgsx"]
+atlas = ExtResource("2_i3kbb")
+region = Rect2(3846, 0, 641, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0p6s5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jv8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yayn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yffu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd3nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdygd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugmrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpgsx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3kbb"]
 bg_color = Color(0.6, 0.23921569, 0.25490198, 1)
@@ -36,30 +94,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xoewe")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1704969769]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.47843137, 0.1882353, 0.27058825, 1)
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1732190822]
+position = Vector2(317.99994, 184.00002)
+scale = Vector2(1.0553823, 1.0583333)
+sprite_frames = SubResource("SpriteFrames_0p6s5")
+animation = &"idle"
+frame_progress = 0.7155746
 
-[node name="Center" type="CenterContainer" parent="Background" unique_id=671270159]
-layout_mode = 1
+[node name="Center" type="CenterContainer" parent="Animation" unique_id=671270159]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -523.2701
+offset_top = -206.45671
+offset_right = -91.27008
+offset_bottom = -158.45671
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Background/Center" unique_id=1794420175]
+[node name="Label" type="Label" parent="Animation/Center" unique_id=1794420175]
 layout_mode = 2
 theme = ExtResource("1_51kpw")
 theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.24705882, 1)

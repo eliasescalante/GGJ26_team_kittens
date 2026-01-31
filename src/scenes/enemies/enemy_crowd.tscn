@@ -1,23 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgk0f4nn83qvh"]
+[gd_scene format=3 uid="uid://cgk0f4nn83qvh"]
 
 [ext_resource type="Script" uid="uid://fgjd37esy676" path="res://src/scripts/enemy_crowd.gd" id="1_f38iy"]
-[ext_resource type="Texture2D" uid="uid://vb08nbcjvge7" path="res://src/assets/kenney_new-platformer-pack-1.1/Spritesheets/spritesheet-enemies-double.png" id="2_03q87"]
+[ext_resource type="Texture2D" uid="uid://3cj1ylppqwkp" path="res://src/assets/npc mob-Sheet.png" id="2_03q87"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ud7o"]
 atlas = ExtResource("2_03q87")
-region = Rect2(256, 512, 128, 128)
+region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scjkw"]
 atlas = ExtResource("2_03q87")
-region = Rect2(384, 512, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_akcds"]
-atlas = ExtResource("2_03q87")
-region = Rect2(512, 512, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vy73k"]
-atlas = ExtResource("2_03q87")
-region = Rect2(640, 512, 128, 128)
+region = Rect2(96, 0, 96, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g13ub"]
 animations = [{
@@ -27,12 +19,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_scjkw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_akcds")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vy73k")
 }],
 "loop": true,
 "name": &"crowd",
@@ -40,30 +26,30 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f38iy"]
-size = Vector2(213, 146.5)
+size = Vector2(193.5, 175)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03q87"]
-size = Vector2(171, 140)
+size = Vector2(171, 173)
 
-[node name="EnemyCrowd" type="CharacterBody2D"]
+[node name="EnemyCrowd" type="CharacterBody2D" unique_id=522095181]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_f38iy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=950283468]
 position = Vector2(3.8146973e-06, -1.0000114)
 scale = Vector2(1.90625, 1.890625)
 sprite_frames = SubResource("SpriteFrames_g13ub")
 animation = &"crowd"
-frame_progress = 0.5555456
+frame_progress = 0.09535576
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, 44.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842373968]
+position = Vector2(0.25, 0.5)
 shape = SubResource("RectangleShape2D_f38iy")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." unique_id=1479080708]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(3.5, 41)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=137146056]
+position = Vector2(4, 3.5)
 shape = SubResource("RectangleShape2D_03q87")
 debug_color = Color(0.8922174, 0.16636124, 0.6840652, 0.41960785)

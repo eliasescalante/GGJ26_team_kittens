@@ -2,7 +2,7 @@ extends Node
 
 signal lives_changed(new_lives)
 
-var player_lives: int = 3:
+var player_lives: int = 4:
 	set(value):
 		player_lives = value
 		lives_changed.emit(player_lives)
@@ -19,4 +19,10 @@ func lose_life():
 		game_over()
 
 func game_over():
-	print("game over, f como dicen los chicos")
+	AudioManager.stop_music()
+	get_tree().change_scene_to_file("res://src/scenes/levels/lose.tscn")
+	print("game over, f")
+
+func win():
+	AudioManager.stop_music()
+	get_tree().change_scene_to_file("res://src/scenes/levels/win.tscn")

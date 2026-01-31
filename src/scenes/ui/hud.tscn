@@ -1,12 +1,58 @@
 [gd_scene format=3 uid="uid://b5yv5dlvqhh8t"]
 
 [ext_resource type="Script" uid="uid://baviu140wsqie" path="res://src/scripts/hud.gd" id="1_mr4ol"]
-[ext_resource type="FontFile" uid="uid://bnltvm0mckpva" path="res://src/assets/fonts/press_start_2p__regular.ttf" id="2_m12ob"]
+[ext_resource type="Texture2D" uid="uid://baalmt1c18vyp" path="res://src/assets/hud mask big-Sheet.png" id="2_m12ob"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_q3cwv"]
-font = ExtResource("2_m12ob")
-font_size = 20
-font_color = Color(0.91475755, 0.88310987, 0.9212822, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3cwv"]
+atlas = ExtResource("2_m12ob")
+region = Rect2(200, 0, 100, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqg30"]
+atlas = ExtResource("2_m12ob")
+region = Rect2(100, 0, 100, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1aga"]
+atlas = ExtResource("2_m12ob")
+region = Rect2(300, 0, 100, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgl5r"]
+atlas = ExtResource("2_m12ob")
+region = Rect2(0, 0, 100, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5bmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3cwv")
+}],
+"loop": true,
+"name": &"casi_muerto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqg30")
+}],
+"loop": true,
+"name": &"medio",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1aga")
+}],
+"loop": true,
+"name": &"muerto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgl5r")
+}],
+"loop": true,
+"name": &"sano",
+"speed": 5.0
+}]
 
 [node name="Hud" type="Control" unique_id=39451456]
 layout_mode = 3
@@ -16,7 +62,7 @@ script = ExtResource("1_mr4ol")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1185016835]
 layout_mode = 0
 offset_right = 638.0
-offset_bottom = 44.0
+offset_bottom = 57.0
 color = Color(0.019607844, 0.019607844, 0.019607844, 0.42352942)
 
 [node name="LifeContainer" type="HBoxContainer" parent="." unique_id=288097152]
@@ -24,9 +70,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LifeCountLabel" type="Label" parent="LifeContainer" unique_id=1506242505]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LifeContainer" unique_id=1478563153]
 unique_name_in_owner = true
-layout_mode = 2
-text = "vidas"
-label_settings = SubResource("LabelSettings_q3cwv")
-horizontal_alignment = 1
+position = Vector2(48.5, 28.187502)
+scale = Vector2(0.6300001, 0.6607142)
+sprite_frames = SubResource("SpriteFrames_r5bmh")
+animation = &"sano"

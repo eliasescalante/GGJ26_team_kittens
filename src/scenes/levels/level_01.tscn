@@ -4920,6 +4920,9 @@ size = Vector2(659, 773)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bfcq"]
 size = Vector2(726, 598)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p46a"]
+size = Vector2(269.5, 526.5)
+
 [node name="Level01" type="Node2D" unique_id=1166076922]
 script = ExtResource("1_j0a6s")
 
@@ -4975,7 +4978,7 @@ position = Vector2(2901, 417)
 position = Vector2(812, 414)
 
 [node name="Player" parent="." unique_id=1830401875 instance=ExtResource("4_yfpvf")]
-position = Vector2(44, 413)
+position = Vector2(-115, 410)
 
 [node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967 node_paths=PackedStringArray("marker_top", "marker_bottom")]
 script = ExtResource("5_yfpvf")
@@ -5001,7 +5004,7 @@ position = Vector2(957, 439)
 position = Vector2(-8, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/limit_bottom" unique_id=750311687]
-position = Vector2(3495, 608)
+position = Vector2(3495, 600)
 shape = SubResource("RectangleShape2D_naqav")
 debug_color = Color(0, 0.6, 0.69803923, 0.21568628)
 
@@ -5022,6 +5025,17 @@ shape = SubResource("RectangleShape2D_lbvuf")
 position = Vector2(-3, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/limit_right" unique_id=1218025338]
-position = Vector2(6451, 383)
+position = Vector2(5704, 356)
 shape = SubResource("RectangleShape2D_8bfcq")
 debug_color = Color(0.91596025, 0.14962396, 0.6124887, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="Limits" unique_id=639322327]
+unique_name_in_owner = true
+position = Vector2(-3, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Area2D" unique_id=370818615]
+position = Vector2(5449, 356)
+shape = SubResource("RectangleShape2D_4p46a")
+debug_color = Color(0.6562706, 0.51439816, 0.13589883, 0.41960785)
+
+[connection signal="body_entered" from="Limits/Area2D" to="." method="_on_area_2d_body_entered"]

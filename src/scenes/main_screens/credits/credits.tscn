@@ -51,6 +51,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -8.0
+offset_right = 2.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -65,7 +69,6 @@ bbcode_enabled = true
 text = "[center]
 CREDITS
 
-
 [url=https://www.instagram.com/dreamscoreaudio/] AGUS  - MUSIC AND SOUND DESIGN[/url]
 
 [url=https://www.instagram.com/comissardeimos?igsh=NmJkN2E5NmJ0OWds] Deimos  - Programming[/url]
@@ -76,11 +79,13 @@ CREDITS
 
 [url=https://www.instagram.com/lagatalola/] Lola  - ART AND ANIMATION[/url]
 
-Miguel - Art
+[url=https://www.tumblr.com/miicap2024] Miguel  - ART [/url]
 
 [url=https://www.instagram.com/pixieskitty/] Kitty Mauge  - GAME DESIGNER[/url]
 
 [center]
+
+
 
 
 "
@@ -92,7 +97,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -60.0
-offset_right = 92.0
+offset_right = 126.0
 grow_vertical = 0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 0

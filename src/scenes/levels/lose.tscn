@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dwvfaiidk5q3c"]
+
+[node name="Lose" type="Node2D" unique_id=1025325996]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1704969769]
+offset_right = 670.0
+offset_bottom = 373.0

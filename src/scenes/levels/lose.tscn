@@ -66,7 +66,7 @@ theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.24705882, 1)
 theme_override_colors/font_outline_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 48
-text = "Game Over"
+text = "GAME_OVER"
 
 [node name="MarginBack" type="MarginContainer" parent="." unique_id=1603716257]
 layout_mode = 1
@@ -82,11 +82,11 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 20
 
 [node name="Back" type="Button" parent="MarginBack" unique_id=329786026]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme = ExtResource("1_51kpw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_i3kbb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6jv8c")
-text = "Back"
+text = "BUTTON_BACK"
 
 [connection signal="pressed" from="MarginBack/Back" to="." method="_on_back_pressed"]

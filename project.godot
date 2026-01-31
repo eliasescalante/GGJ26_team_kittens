@@ -46,6 +46,10 @@ folder_colors={
 
 player=""
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://src/assets/translations/translations.en.translation", "res://src/assets/translations/translations.es.translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

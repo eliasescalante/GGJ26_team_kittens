@@ -111,7 +111,7 @@ layout_mode = 2
 theme = ExtResource("2_jicit")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3jnfk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5if85")
-text = "Back"
+text = "BUTTON_BACK"
 
 [connection signal="meta_clicked" from="MarginText/Credits" to="." method="_on_credits_meta_clicked"]
 [connection signal="pressed" from="MarginBack/Back" to="." method="_on_back_pressed"]

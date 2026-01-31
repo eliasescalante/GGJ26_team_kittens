@@ -14,10 +14,12 @@ func _on_body_entered(body):
 		normal_speed = body.speed
 		body.speed = normal_speed * slow_factor
 		body.modulate = Color(0.7, 0.8, 1.0)
-		anim.play("splash") 
+		anim.play("splash")
+		AudioManager.charco_play()
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		body.speed = normal_speed
 		body.modulate = Color(1, 1, 1)
 		anim.play("idle")
+		AudioManager.charco_stop()

@@ -101,27 +101,27 @@ sprite_frames = SubResource("SpriteFrames_0p6s5")
 animation = &"idle"
 frame_progress = 0.7155746
 
-[node name="Center" type="CenterContainer" parent="Animation" unique_id=671270159]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -523.2701
-offset_top = -206.45671
-offset_right = -91.27008
-offset_bottom = -158.45671
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1667124974]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -432.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
 
-[node name="Label" type="Label" parent="Animation/Center" unique_id=1794420175]
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1794420175]
 layout_mode = 2
 theme = ExtResource("1_51kpw")
-theme_override_colors/font_color = Color(0.27058825, 0.16078432, 0.24705882, 1)
+theme_override_colors/font_color = Color(0.6, 0.23921569, 0.25490198, 1)
 theme_override_colors/font_outline_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 26
 text = "GAME_OVER"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="MarginBack" type="MarginContainer" parent="." unique_id=1603716257]
 layout_mode = 1
@@ -137,11 +137,11 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 20
 
 [node name="Back" type="Button" parent="MarginBack" unique_id=329786026]
-custom_minimum_size = Vector2(180, 40)
+custom_minimum_size = Vector2(250, 40)
 layout_mode = 2
 theme = ExtResource("1_51kpw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_i3kbb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6jv8c")
-text = "Jugar de vuetla"
+text = "BUTTON_PLAY_AGAIN"
 
 [connection signal="pressed" from="MarginBack/Back" to="." method="_on_back_pressed"]

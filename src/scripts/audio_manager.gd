@@ -10,6 +10,7 @@ extends Node
 @onready var crowd = $SFX/NpcCrownd
 @onready var respiracion = $SFX/Respiracion
 @onready var mate = $SFX/MateEnCasa
+@onready var lose = $LoseGameOver
 
 #-----------------------------------------------------------------------------
 #MUSICA DEL JUEGO
@@ -86,3 +87,11 @@ func mate_play():
 
 func mate_stop():
 	mate.stop()
+	
+
+func lose_play():
+	if not lose.playing:
+		lose.play()
+
+func lose_stop():
+	lose.stop()

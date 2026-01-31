@@ -44,6 +44,7 @@ func _process(delta):
 		# Si completamos el tiempo requerido
 		if current_masking_time >= masking_time_required:
 			_on_masking_success()
+			AudioManager.crowd_stop()
 
 func _on_masking_success():
 	is_masking_complete = true

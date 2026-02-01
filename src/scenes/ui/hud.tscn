@@ -152,7 +152,7 @@ offset_bottom = 48.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HudNormal/LifeContainer" unique_id=1478563153]
 unique_name_in_owner = true
-position = Vector2(48.5, 28.187502)
+position = Vector2(-17, 21)
 scale = Vector2(0.6300001, 0.6607142)
 sprite_frames = SubResource("SpriteFrames_r5bmh")
 animation = &"sano"

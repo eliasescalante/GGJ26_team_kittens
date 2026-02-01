@@ -6,3 +6,5 @@ BUTTON_BACK,Back,Volver
 BUTTON_PLAY_AGAIN,Play Again,Jugar de Nuevo
 GAME_TITLE,Crowd Surfer,Surfista de Multitud
 GAME_OVER,Game Over,¡Has perdido!
+TEXT_INTRO_1,[center]Many people on the autism spectrum practice something called "masking": hiding their natural characteristics to fit into social spaces. This requires constant effort and can be exhausting.[/center],[center]Muchas personas en el espectro autista practican algo llamado "masking" o enmascaramiento: ocultar sus características naturales para encajar en espacios sociales. Esto requiere un esfuerzo constante y puede ser agotador.[/center]
+TEXT_INTRO_2,[center]In this game... you are a maned wolf returning home from work. To move through the city. You must go unnoticed among people. Only when you reach your home can you take off the mask and be yourself.[/center],[center]En este juego.. eres un Aguará Guazú que regresa del trabajo a casa. Para moverte por la ciudad. Debes pasar desapercibido entre la gente. Solo cuando llegues a tu hogar podrás quitarte la máscara y ser tú mismo.[/center]

@@ -7,7 +7,7 @@ extends Control
 var vidas_actuales = GameManager.player_lives
 
 func _ready():
-	var is_mobile = not OS.has_feature("web_android")
+	var is_mobile = OS.has_feature("web_android")
 	
 	$TouchControls.visible = is_mobile
 	$HudNormal.visible = true

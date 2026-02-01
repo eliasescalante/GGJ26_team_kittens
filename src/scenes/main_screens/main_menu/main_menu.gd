@@ -4,7 +4,7 @@ func _ready() -> void:
 	$%AnimatedSprite2D.play("default")
 	AudioManager.menu_play()
 	
-	if OS.get_name() == "WEB":
+	if OS.get_name() == "WEB" or OS.has_feature("web_android"):
 		$HBoxContainer/Margin/PanelContainer/VBox/Exit.hide()
 
 

@@ -2,6 +2,22 @@
 
 [ext_resource type="Script" uid="uid://baviu140wsqie" path="res://src/scripts/hud.gd" id="1_mr4ol"]
 [ext_resource type="Texture2D" uid="uid://baalmt1c18vyp" path="res://src/assets/hud mask big-Sheet.png" id="2_m12ob"]
+[ext_resource type="Shader" uid="uid://c6m2foen5btjd" path="res://src/assets/hud.gdshader" id="2_q3cwv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m12ob"]
+radius = 30.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqg30"]
+shader = ExtResource("2_q3cwv")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3cwv"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqg30"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1aga"]
+radius = 30.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3cwv"]
 atlas = ExtResource("2_m12ob")
@@ -59,18 +75,82 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mr4ol")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1185016835]
+[node name="TouchControls" type="Control" parent="." unique_id=681519265]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Right" type="TouchScreenButton" parent="TouchControls" unique_id=2046367716]
+position = Vector2(157, 284)
+shape = SubResource("CircleShape2D_m12ob")
+action = "ui_right"
+
+[node name="ColorRect" type="ColorRect" parent="TouchControls/Right" unique_id=1193199953]
+material = SubResource("ShaderMaterial_dqg30")
+offset_left = -29.0
+offset_top = -28.0
+offset_right = 25.0
+offset_bottom = 30.0
+color = Color(0.019607844, 0.019607844, 0.019607844, 0.57254905)
+
+[node name="BtnLeft" type="TouchScreenButton" parent="TouchControls" unique_id=141021973]
+position = Vector2(44, 284)
+shape = SubResource("CircleShape2D_q3cwv")
+action = "ui_left"
+
+[node name="ColorRect" type="ColorRect" parent="TouchControls/BtnLeft" unique_id=1133345761]
+material = SubResource("ShaderMaterial_dqg30")
+offset_left = -29.0
+offset_top = -28.0
+offset_right = 25.0
+offset_bottom = 30.0
+color = Color(0.019607844, 0.019607844, 0.019607844, 0.57254905)
+
+[node name="BtnDown" type="TouchScreenButton" parent="TouchControls" unique_id=1174450787]
+position = Vector2(99, 323)
+shape = SubResource("CircleShape2D_dqg30")
+action = "ui_down"
+
+[node name="ColorRect" type="ColorRect" parent="TouchControls/BtnDown" unique_id=1737069365]
+material = SubResource("ShaderMaterial_dqg30")
+offset_left = -29.0
+offset_top = -28.0
+offset_right = 25.0
+offset_bottom = 30.0
+color = Color(0.019607844, 0.019607844, 0.019607844, 0.57254905)
+
+[node name="Up" type="TouchScreenButton" parent="TouchControls" unique_id=401968275]
+position = Vector2(98, 236)
+shape = SubResource("CircleShape2D_p1aga")
+action = "ui_up"
+
+[node name="ColorRect" type="ColorRect" parent="TouchControls/Up" unique_id=891887688]
+material = SubResource("ShaderMaterial_dqg30")
+offset_left = -29.0
+offset_top = -28.0
+offset_right = 25.0
+offset_bottom = 30.0
+color = Color(0.019607844, 0.019607844, 0.019607844, 0.57254905)
+
+[node name="HudNormal" type="Control" parent="." unique_id=1217923517]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="HudNormal" unique_id=1185016835]
 layout_mode = 0
 offset_right = 638.0
 offset_bottom = 57.0
 color = Color(0, 0, 0, 0.7882353)
 
-[node name="LifeContainer" type="HBoxContainer" parent="." unique_id=288097152]
+[node name="LifeContainer" type="HBoxContainer" parent="HudNormal" unique_id=288097152]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 72.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 48.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LifeContainer" unique_id=1478563153]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HudNormal/LifeContainer" unique_id=1478563153]
 unique_name_in_owner = true
 position = Vector2(48.5, 28.187502)
 scale = Vector2(0.6300001, 0.6607142)

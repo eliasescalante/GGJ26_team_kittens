@@ -1,12 +1,17 @@
 extends Control
 
 @onready var life_label = $LifeContainer/LifeCountLabel
-@onready var sprite = $LifeContainer/AnimatedSprite2D
+@onready var sprite = $HudNormal/LifeContainer/AnimatedSprite2D
 @onready var overlay := $ColorRect2
 
 var vidas_actuales = GameManager.player_lives
 
 func _ready():
+	var is_mobile = not OS.has_feature("web_android")
+	
+	$TouchControls.visible = is_mobile
+	$HudNormal.visible = true
+	
 	overlay.visible = false
 	overlay.modulate.a = 0.0
 	GameManager.masking_overlay = overlay

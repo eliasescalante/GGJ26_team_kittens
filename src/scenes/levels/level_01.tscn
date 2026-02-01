@@ -5105,7 +5105,7 @@ size = Vector2(659, 773)
 size = Vector2(726, 598)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p46a"]
-size = Vector2(82.75, 124.25)
+size = Vector2(82.75, 266.125)
 
 [node name="Level01" type="Node2D" unique_id=1166076922]
 script = ExtResource("1_j0a6s")
@@ -5272,7 +5272,7 @@ unique_name_in_owner = true
 position = Vector2(-3, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Area2D" unique_id=370818615]
-position = Vector2(5908, 313)
+position = Vector2(5908, 383.9375)
 shape = SubResource("RectangleShape2D_4p46a")
 debug_color = Color(0.6562706, 0.51439816, 0.13589883, 0.41960785)
 

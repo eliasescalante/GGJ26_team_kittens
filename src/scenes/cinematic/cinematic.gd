@@ -2,6 +2,9 @@ extends Control
 
 var count_pressed := 0
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("idle")
+
 func _on_next_pressed() -> void:
 	if count_pressed == 0:
 		count_pressed += 1

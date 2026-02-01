@@ -1,19 +1,44 @@
 [gd_scene format=3 uid="uid://c4r776bfmjf5r"]
 
 [ext_resource type="Script" uid="uid://d855xtddkgv0" path="res://src/scenes/cinematic/cinematic.gd" id="1_lte4l"]
-[ext_resource type="Texture2D" uid="uid://bq2kpiqisrf1r" path="res://src/assets/cinematics/cinematics_1.png" id="1_n1y1e"]
-[ext_resource type="Texture2D" uid="uid://bgf30fo5m8of2" path="res://src/assets/cinematics/cinematics_2.png" id="2_owakr"]
-[ext_resource type="Texture2D" uid="uid://c471mnwaqs0t2" path="res://src/assets/cinematics/cinematics_3.png" id="3_lte4l"]
 [ext_resource type="FontFile" uid="uid://bnltvm0mckpva" path="res://src/assets/fonts/press_start_2p__regular.ttf" id="5_ovc0l"]
+[ext_resource type="Texture2D" uid="uid://d2udspbayyw0g" path="res://src/assets/loading inicio-Sheet.png" id="5_w3wmj"]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_38lyq"]
-frames = 3
-frame_0/texture = ExtResource("1_n1y1e")
-frame_0/duration = 2.0
-frame_1/texture = ExtResource("2_owakr")
-frame_1/duration = 2.0
-frame_2/texture = ExtResource("3_lte4l")
-frame_2/duration = 2.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjiql"]
+atlas = ExtResource("5_w3wmj")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi62k"]
+atlas = ExtResource("5_w3wmj")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwi47"]
+atlas = ExtResource("5_w3wmj")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oes25"]
+atlas = ExtResource("5_w3wmj")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcmni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjiql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi62k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwi47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oes25")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Cinematic" type="Control" unique_id=975655726]
 layout_mode = 3
@@ -31,7 +56,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AnimatedTexture_38lyq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2144703245]
+position = Vector2(327.5, 186.5)
+scale = Vector2(1.0484375, 1.0805556)
+sprite_frames = SubResource("SpriteFrames_dcmni")
+animation = &"idle"
+frame_progress = 0.59220004
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=423481247]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 243.0
+offset_right = 661.0
+offset_bottom = 365.0
+color = Color(0.20983386, 0.0495271, 0.09536379, 0.58431375)
 
 [node name="Text" type="RichTextLabel" parent="." unique_id=1004478344]
 custom_minimum_size = Vector2(0, 107)
@@ -45,6 +84,7 @@ grow_vertical = 0
 theme_override_colors/default_color = Color(0.9490196, 0.9254902, 0.54509807, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_ovc0l")
+theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "TEXT_INTRO_1"
 

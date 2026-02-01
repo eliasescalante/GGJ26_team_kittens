@@ -15,7 +15,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		print(body.speed)
 		normal_speed = body.speed
 		body.speed = normal_speed * slow_factor
 		body.modulate = Color(0.7, 0.8, 1.0)

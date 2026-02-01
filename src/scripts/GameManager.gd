@@ -55,7 +55,6 @@ func game_over():
 	set_difficulty(Difficulty.NORMAL)
 	AudioManager.stop_music()
 	get_tree().change_scene_to_file("res://src/scenes/levels/lose.tscn")
-	print("game over, f")
 
 func win():
 	print("dificultad en:", Difficulty.NORMAL )

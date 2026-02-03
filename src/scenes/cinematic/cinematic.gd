@@ -5,9 +5,13 @@ var count_pressed := 0
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 
-func _on_next_pressed() -> void:
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_accept"):
+		next_step()
+
+func next_step():
 	if count_pressed == 0:
 		count_pressed += 1
 		$Text.text = tr("TEXT_INTRO_2")
-	elif count_pressed > 0:
+	else:
 		get_tree().change_scene_to_file("res://src/scenes/levels/level_01.tscn")

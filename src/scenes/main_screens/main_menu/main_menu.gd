@@ -6,7 +6,7 @@ func _ready() -> void:
 	
 	if OS.get_name() == "WEB" or OS.has_feature("web_android"):
 		$HBoxContainer/Margin/PanelContainer/VBox/Exit.hide()
-
+	$HBoxContainer/Margin/PanelContainer/VBox/Start.grab_focus()
 
 func _on_start_pressed() -> void:
 	AudioManager.boton_menu_play()

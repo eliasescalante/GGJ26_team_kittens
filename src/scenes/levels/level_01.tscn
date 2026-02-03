@@ -5129,9 +5129,9 @@ tile_map_data = PackedByteArray("AADv/xcAAAAAAAAAAADv/xgAAAAAAAEAAADv/xkAAAAAAAI
 tile_set = SubResource("TileSet_n0kxv")
 
 [node name="street" type="ColorRect" parent="Background" unique_id=1971418432]
-offset_left = -903.0
+offset_left = -959.0
 offset_top = 515.0
-offset_right = 9012.0
+offset_right = 8956.0
 offset_bottom = 832.0
 mouse_filter = 2
 color = Color(0.13682574, 0.13682574, 0.13682568, 1)
@@ -5205,6 +5205,122 @@ scale = Vector2(9, 9)
 tile_map_data = PackedByteArray("AAAlAAAAAAAAAAAAAAAlAAEAAAAAAAEAAAAmAAAAAAABAAAAAAAmAAEAAAABAAEAAAApAAAAAAAAAAAAAAApAAEAAAAAAAEAAAAqAAAAAAABAAAAAAAqAAEAAAABAAEAAAArAAAAAAACAAAAAAArAAEAAAACAAEAAAAsAAAAAAADAAAAAAAsAAEAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_jxedu")
 
+[node name="lineas_de_la_calle" type="Node2D" parent="Background" unique_id=1457805521]
+
+[node name="ColorRect" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=598712487]
+offset_left = -107.0
+offset_top = 609.0
+offset_right = -47.0
+offset_bottom = 629.0
+
+[node name="ColorRect2" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1555253447]
+offset_left = 288.0
+offset_top = 606.0
+offset_right = 348.0
+offset_bottom = 626.0
+
+[node name="ColorRect3" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=517027979]
+offset_left = 654.0
+offset_top = 606.0
+offset_right = 714.0
+offset_bottom = 626.0
+
+[node name="ColorRect4" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=807188817]
+offset_left = 1012.0
+offset_top = 606.0
+offset_right = 1072.0
+offset_bottom = 626.0
+
+[node name="ColorRect5" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1139254702]
+offset_left = 1354.0
+offset_top = 603.0
+offset_right = 1414.0
+offset_bottom = 623.0
+
+[node name="ColorRect6" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1512634735]
+offset_left = 1706.0
+offset_top = 600.0
+offset_right = 1766.0
+offset_bottom = 620.0
+
+[node name="ColorRect7" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1976672082]
+offset_left = 2055.0
+offset_top = 600.0
+offset_right = 2115.0
+offset_bottom = 620.0
+
+[node name="ColorRect8" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=654216687]
+offset_left = 2423.0
+offset_top = 600.0
+offset_right = 2483.0
+offset_bottom = 620.0
+
+[node name="ColorRect9" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1943541985]
+offset_left = 2784.0
+offset_top = 596.0
+offset_right = 2844.0
+offset_bottom = 616.0
+
+[node name="ColorRect10" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=528261044]
+offset_left = 3130.0
+offset_top = 596.0
+offset_right = 3190.0
+offset_bottom = 616.0
+
+[node name="ColorRect11" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1565010579]
+offset_left = 3502.0
+offset_top = 596.0
+offset_right = 3562.0
+offset_bottom = 616.0
+
+[node name="ColorRect12" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1199189413]
+offset_left = 3855.0
+offset_top = 592.0
+offset_right = 3915.0
+offset_bottom = 612.0
+
+[node name="ColorRect13" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=2047801588]
+offset_left = 4212.0
+offset_top = 592.0
+offset_right = 4272.0
+offset_bottom = 612.0
+
+[node name="ColorRect14" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=828873568]
+offset_left = 4558.0
+offset_top = 592.0
+offset_right = 4618.0
+offset_bottom = 612.0
+
+[node name="ColorRect15" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1355196200]
+offset_left = 4896.0
+offset_top = 592.0
+offset_right = 4956.0
+offset_bottom = 612.0
+
+[node name="ColorRect16" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1727979169]
+offset_left = 5245.0
+offset_top = 592.0
+offset_right = 5305.0
+offset_bottom = 612.0
+
+[node name="ColorRect17" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=1553867128]
+offset_left = 5591.0
+offset_top = 588.0
+offset_right = 5651.0
+offset_bottom = 608.0
+
+[node name="ColorRect18" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=985893051]
+offset_left = 5921.0
+offset_top = 588.0
+offset_right = 5981.0
+offset_bottom = 608.0
+
+[node name="ColorRect19" type="ColorRect" parent="Background/lineas_de_la_calle" unique_id=98521810]
+offset_left = 6263.0
+offset_top = 589.0
+offset_right = 6323.0
+offset_bottom = 609.0
+
 [node name="Player" parent="." unique_id=1830401875 instance=ExtResource("4_yfpvf")]
 position = Vector2(-168, 438)
 
@@ -5237,6 +5353,7 @@ offset_bottom = 531.0
 color = Color(0, 0, 0, 0.57254905)
 
 [node name="Limits" type="Node2D" parent="." unique_id=413434501]
+visible = false
 
 [node name="limit_bottom" type="StaticBody2D" parent="Limits" unique_id=456150569]
 position = Vector2(-8, -6)

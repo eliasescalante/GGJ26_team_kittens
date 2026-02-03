@@ -182,6 +182,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bqiv2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lmhnw")
 text = "BUTTON_EXIT"
 
+[node name="Button" type="Button" parent="HBoxContainer/Margin/PanelContainer/VBox" unique_id=900363123]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "OPCIONES"
+
 [node name="Title" type="Label" parent="HBoxContainer" unique_id=1470360662]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
@@ -206,3 +211,4 @@ frame_progress = 0.007707303
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Button" to="." method="_on_button_pressed"]

@@ -74,4 +74,4 @@ volume_db = 20.07
 
 [node name="MateEnCasa" type="AudioStreamPlayer" parent="SFX" unique_id=599528716]
 stream = ExtResource("6_ageuu")
-volume_db = 13.684
+volume_db = 17.614

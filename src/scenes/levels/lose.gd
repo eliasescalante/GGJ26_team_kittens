@@ -1,7 +1,9 @@
 extends Control
 @onready var anim = $Animation
+@onready var retry_button = $MarginBack/Back
 
 func _ready() -> void:
+	retry_button.grab_focus()
 	anim.play("idle")
 	AudioManager.lose_play()
 	

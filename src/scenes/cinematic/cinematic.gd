@@ -5,9 +5,13 @@ var count_pressed := 0
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_accept"):
+func _input(event):
+	if event is InputEventScreenTouch and event.pressed:
 		next_step()
+		
+	elif event.is_action_pressed("ui_accept"):
+		next_step()
+
 
 func next_step():
 	if count_pressed == 0:

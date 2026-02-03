@@ -1,6 +1,9 @@
 extends Control
 
+@onready var retry_button = $MarginBack/Back
+
 func _ready() -> void:
+	retry_button.grab_focus()
 	AudioManager.crowd_stop()
 	AudioManager.end_game_play()
 

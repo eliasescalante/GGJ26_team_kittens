@@ -1,8 +1,27 @@
 extends Node
 
 signal lives_changed(new_lives)
-var masking_overlay: ColorRect = null
 
+enum Difficulty {
+	EASY,
+	NORMAL,
+	HARDCORE
+}
+
+
+var difficulty = Difficulty.NORMAL
+
+# ---------- SPAWN ----------
+var spawn_initial := 6.0
+var spawn_min := 2.5
+
+# ---------- CROWD ----------
+var masking_time := 2.0
+
+
+
+var masking_overlay: ColorRect = null
+var master_volume := 1.0
 var active_stealth_zones = 0
 var player:Node = null
 var player_lives: int = 4:
@@ -55,4 +74,35 @@ func hide_masking():
 	t.tween_property(masking_overlay, "modulate:a", 0.0, 0.25)
 	t.finished.connect(func():
 		masking_overlay.visible = false
+	)
+
+
+func set_difficulty(new_difficulty):
+
+	difficulty = new_difficulty
+
+	match difficulty:
+
+		Difficulty.EASY:
+			spawn_initial = 6.0
+			spawn_min = 3
+			masking_time = 1.5
+
+		Difficulty.NORMAL:
+			spawn_initial = 5.0
+			spawn_min = 2.5
+			masking_time = 2.0
+
+		Difficulty.HARDCORE:
+			spawn_initial = 4.0
+			spawn_min = 1.0
+			masking_time = 3.0
+
+
+func set_master_volume(value):
+	master_volume = value
+	
+	AudioServer.set_bus_volume_db(
+		AudioServer.get_bus_index("Master"),
+		linear_to_db(master_volume)
 	)

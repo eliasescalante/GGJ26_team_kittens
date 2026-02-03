@@ -23,3 +23,9 @@ func _on_exit_pressed() -> void:
 	AudioManager.boton_menu_play()
 	await get_tree().create_timer(0.9).timeout
 	get_tree().quit()
+
+
+func _on_button_pressed() -> void:
+	AudioManager.boton_menu_play()
+	get_tree().change_scene_to_file("res://src/scenes/ui/option.tscn")
+	pass # Replace with function body.

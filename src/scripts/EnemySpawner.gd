@@ -14,6 +14,8 @@ var cycle: int = 0
 var player: CharacterBody2D = null
 
 func _ready():
+	initial_spawn_interval = GameManager.spawn_initial
+	min_spawn_interval = GameManager.spawn_min
 	current_spawn_interval = initial_spawn_interval
 
 func _process(delta):

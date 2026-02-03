@@ -6,6 +6,7 @@ var is_player_inside = false
 var is_masking_complete = false
 
 func _ready():
+	masking_time_required = GameManager.masking_time
 	# Buscamos al jugador manualmente para asegurar la referencia
 	player_ref = get_tree().get_first_node_in_group("player")
 	

@@ -11,7 +11,10 @@ func _ready():
 		volume_slider.value = 0.5
 	
 	load_settings()
-
+	
+	difficulty_button.select(1)
+	GameManager.set_difficulty(GameManager.Difficulty.NORMAL)
+	
 	volume_slider.grab_focus()
 
 	volume_slider.value_changed.connect(_on_volume_changed)
@@ -32,6 +35,7 @@ func _on_volume_changed(value):
 
 func _on_difficulty_selected(index):
 	GameManager.set_difficulty(index)
+	print("dificultad seleccionada:", index)
 	save_settings()
 
 
@@ -64,8 +68,6 @@ func save_settings():
 	var config = ConfigFile.new()
 
 	config.set_value("audio", "volume", volume_slider.value)
-	config.set_value("gameplay", "difficulty", difficulty_button.selected)
-
 	config.save("user://settings.cfg")
 
 func load_settings():
@@ -75,14 +77,7 @@ func load_settings():
 		return
 
 	var vol = config.get_value("audio", "volume", 0.5)
-	var diff = config.get_value("gameplay", "difficulty", 1)
-
 	volume_slider.value = vol
-	difficulty_button.select(diff)
-
-	GameManager.set_difficulty(diff)
-
-
 
 func _on_back_button_pressed() -> void:
 	AudioManager.boton_menu_play()

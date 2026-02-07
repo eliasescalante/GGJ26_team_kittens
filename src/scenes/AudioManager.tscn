@@ -36,11 +36,11 @@ script = ExtResource("1_k0bi8")
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1902129791]
 stream = ExtResource("2_l4hpf")
-volume_db = -8.0
+volume_db = -3.439
 
 [node name="MenuDemo" type="AudioStreamPlayer" parent="." unique_id=1428097941]
 stream = ExtResource("2_qnqed")
-volume_db = -10.0
+volume_db = -6.351
 
 [node name="LoseGameOver" type="AudioStreamPlayer" parent="." unique_id=1848439076]
 stream = SubResource("AudioStreamOggVorbis_ageuu")
@@ -60,13 +60,15 @@ stream = ExtResource("3_ageuu")
 
 [node name="MaskCrack1" type="AudioStreamPlayer" parent="SFX" unique_id=1299060552]
 stream = ExtResource("4_qnqed")
+volume_db = 8.211
 
 [node name="MaskCrack2" type="AudioStreamPlayer" parent="SFX" unique_id=1035156971]
 stream = ExtResource("5_l4hpf")
+volume_db = 9.123
 
 [node name="NpcCrownd" type="AudioStreamPlayer" parent="SFX" unique_id=1611295950]
 stream = SubResource("AudioStreamWAV_l7gqj")
-volume_db = -8.767
+volume_db = -6.942
 
 [node name="Respiracion" type="AudioStreamPlayer" parent="SFX" unique_id=536753540]
 stream = SubResource("AudioStreamWAV_ageuu")
@@ -74,4 +76,4 @@ volume_db = 20.07
 
 [node name="MateEnCasa" type="AudioStreamPlayer" parent="SFX" unique_id=599528716]
 stream = ExtResource("6_ageuu")
-volume_db = 17.614
+volume_db = 20.351

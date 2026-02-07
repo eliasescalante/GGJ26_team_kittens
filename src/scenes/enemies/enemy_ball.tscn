@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bxxl6bnb7f08a"]
+
+[ext_resource type="Script" uid="uid://bo3ahded0t4fh" path="res://src/scripts/enemy_ball.gd" id="1_kr2kx"]
+[ext_resource type="Texture2D" uid="uid://dlg2ovtkrq8dg" path="res://src/assets/bolanpc-Sheet.png" id="2_t2bcn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akcds"]
+atlas = ExtResource("2_t2bcn")
+region = Rect2(0, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy73k"]
+atlas = ExtResource("2_t2bcn")
+region = Rect2(67, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwthf"]
+atlas = ExtResource("2_t2bcn")
+region = Rect2(134, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpg8r"]
+atlas = ExtResource("2_t2bcn")
+region = Rect2(201, 0, 67, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g13ub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akcds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy73k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwthf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpg8r")
+}],
+"loop": true,
+"name": &"ball",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kr2kx"]
+radius = 71.678535
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iy81i"]
+radius = 69.74418
+
+[node name="EnemyBall" type="CharacterBody2D" unique_id=522095181]
+collision_layer = 4
+script = ExtResource("1_kr2kx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=950283468]
+position = Vector2(3.8146973e-06, -1.0000114)
+scale = Vector2(1.90625, 1.890625)
+sprite_frames = SubResource("SpriteFrames_g13ub")
+animation = &"ball"
+frame_progress = 0.37630954
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842373968]
+position = Vector2(0.25, 0.5)
+shape = SubResource("CircleShape2D_kr2kx")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1479080708]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=137146056]
+position = Vector2(2, 0.5)
+shape = SubResource("CircleShape2D_iy81i")
+debug_color = Color(0.8922174, 0.16636124, 0.6840652, 0.41960785)

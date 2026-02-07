@@ -92,6 +92,15 @@ offset_top = 217.0
 offset_right = 356.0
 offset_bottom = 259.0
 focus_previous = NodePath("../HSlider")
+selected = 1
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Fácil"
+popup/item_0/id = 0
+popup/item_1/text = "Normal"
+popup/item_1/id = 1
+popup/item_2/text = "Hardcore"
+popup/item_2/id = 2
 
 [node name="BackButton" type="Button" parent="." unique_id=801723067]
 custom_minimum_size = Vector2(0, 40)

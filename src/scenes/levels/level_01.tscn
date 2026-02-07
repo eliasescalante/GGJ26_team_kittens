@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cy4bgklib1drd" path="res://src/assets/casa final y escondites.png" id="8_mc7rl"]
 [ext_resource type="Texture2D" uid="uid://dimcempgdq3vq" path="res://src/assets/plantas.png" id="9_n0kxv"]
 [ext_resource type="PackedScene" uid="uid://b5yv5dlvqhh8t" path="res://src/scenes/ui/hud.tscn" id="10_8bfcq"]
+[ext_resource type="PackedScene" uid="uid://bxxl6bnb7f08a" path="res://src/scenes/enemies/enemy_ball.tscn" id="13_mc7rl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4p46a"]
 load_path = "res://.godot/imported/preview.png-9e77e22c16ae01e385eed8e15d88bccd.ctex"
@@ -5153,6 +5154,9 @@ position = Vector2(1878, 426)
 [node name="WaterTile6" parent="Background/WaterTiles" unique_id=3377157 instance=ExtResource("8_lo748")]
 position = Vector2(1487, 451)
 
+[node name="WaterTile14" parent="Background/WaterTiles" unique_id=563361923 instance=ExtResource("8_lo748")]
+position = Vector2(1169, 481)
+
 [node name="WaterTile5" parent="Background/WaterTiles" unique_id=1787536980 instance=ExtResource("8_lo748")]
 position = Vector2(1102, 401)
 
@@ -5327,6 +5331,7 @@ position = Vector2(-168, 438)
 [node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967 node_paths=PackedStringArray("marker_top", "marker_bottom")]
 script = ExtResource("5_yfpvf")
 enemy_crowd = ExtResource("6_naqav")
+enemy_ball = ExtResource("13_mc7rl")
 marker_top = NodePath("Top")
 marker_bottom = NodePath("Bottom")
 

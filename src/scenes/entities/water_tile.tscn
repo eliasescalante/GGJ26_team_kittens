@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://gihm41cn0sum" path="res://src/assets/charkito-Sheet.png" id="2_njcgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njcgt"]
-size = Vector2(71, 39.5)
+size = Vector2(68, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4skg4"]
 atlas = ExtResource("2_njcgt")
@@ -58,7 +58,7 @@ animations = [{
 script = ExtResource("1_ac3g7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=197519946]
-position = Vector2(2.5, 7.75)
+position = Vector2(1, 15)
 shape = SubResource("RectangleShape2D_njcgt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=305160558]

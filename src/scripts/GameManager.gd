@@ -8,8 +8,12 @@ enum Difficulty {
 	HARDCORE
 }
 
-
 var difficulty = Difficulty.NORMAL
+
+# ---------- BALL ----------
+var ball_spawn_interval := 6.0
+var ball_push_force := 180.0
+
 
 # ---------- SPAWN ----------
 var spawn_initial := 6.0
@@ -47,11 +51,15 @@ func lose_life():
 		game_over()
 
 func game_over():
+	print("dificultad en:", Difficulty.NORMAL)
+	set_difficulty(Difficulty.NORMAL)
 	AudioManager.stop_music()
 	get_tree().change_scene_to_file("res://src/scenes/levels/lose.tscn")
 	print("game over, f")
 
 func win():
+	print("dificultad en:", Difficulty.NORMAL )
+	set_difficulty(Difficulty.NORMAL)
 	AudioManager.stop_music()
 	get_tree().change_scene_to_file("res://src/scenes/levels/curtains.tscn")
 	
@@ -78,7 +86,6 @@ func hide_masking():
 
 
 func set_difficulty(new_difficulty):
-
 	difficulty = new_difficulty
 
 	match difficulty:
@@ -86,17 +93,26 @@ func set_difficulty(new_difficulty):
 		Difficulty.EASY:
 			spawn_initial = 6.0
 			spawn_min = 3
-			masking_time = 1.5
+			masking_time = 1.0
+
+			ball_spawn_interval = 7.0
+			ball_push_force = 500.0
 
 		Difficulty.NORMAL:
 			spawn_initial = 5.0
-			spawn_min = 2.5
-			masking_time = 2.0
+			spawn_min = 2
+			masking_time = 1.5
+
+			ball_spawn_interval = 5.0
+			ball_push_force = 700.0
 
 		Difficulty.HARDCORE:
 			spawn_initial = 4.0
-			spawn_min = 1.0
-			masking_time = 3.0
+			spawn_min = 1.2
+			masking_time = 2.5
+
+			ball_spawn_interval = 2.0
+			ball_push_force = 1000.0
 
 
 func set_master_volume(value):

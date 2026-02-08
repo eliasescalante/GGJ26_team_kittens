@@ -18,6 +18,8 @@ config/name="GGJ26 grupo Kittens - Crowd Surfer"
 config/description="s"
 run/main_scene="uid://bphyccs28s8db"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/stretch_mode=0
+boot_splash/image="uid://cuirya38hwm0m"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -75,6 +77,7 @@ locale/translations=PackedStringArray("res://src/assets/translations/translation
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.3019608, 0.9764706, 0.3019608, 1)
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true
 textures/snap/snap_2d_vertices_to_pixel=true

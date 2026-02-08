@@ -6,20 +6,24 @@ extends Control
 
 func _ready():
 	setup_difficulty()
-	
-	if not FileAccess.file_exists("user://settings.cfg"):
+
+	# ESPERAR 1 FRAME (clave para mobile web)
+	await get_tree().process_frame
+
+	if FileAccess.file_exists("user://settings.cfg"):
+		load_settings()
+	else:
 		volume_slider.value = 0.5
-	
-	load_settings()
-	
-	difficulty_button.select(1)
-	GameManager.set_difficulty(GameManager.Difficulty.NORMAL)
-	
+		difficulty_button.select(1)
+		GameManager.set_difficulty(GameManager.Difficulty.NORMAL)
+		save_settings()
+
 	volume_slider.grab_focus()
 
 	volume_slider.value_changed.connect(_on_volume_changed)
 	difficulty_button.item_selected.connect(_on_difficulty_selected)
 	back_button.pressed.connect(_on_back_button_pressed)
+
 
 func setup_difficulty():
 	difficulty_button.clear()

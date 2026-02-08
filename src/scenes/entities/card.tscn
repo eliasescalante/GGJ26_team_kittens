@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://qybxiq0stohe"]
+
+[ext_resource type="Texture2D" uid="uid://dudi5gnwunwsq" path="res://src/assets/fitito auto-Sheet.png" id="1_3h6w3"]
+[ext_resource type="Script" uid="uid://dfe5anjix6ddp" path="res://src/scripts/car.gd" id="1_lmkpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmkpm"]
+atlas = ExtResource("1_3h6w3")
+region = Rect2(0, 0, 65, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs1r5"]
+atlas = ExtResource("1_3h6w3")
+region = Rect2(65, 0, 65, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n016l"]
+atlas = ExtResource("1_3h6w3")
+region = Rect2(130, 0, 65, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vujwp"]
+atlas = ExtResource("1_3h6w3")
+region = Rect2(195, 0, 65, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjera"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmkpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs1r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n016l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vujwp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Card" type="Node2D" unique_id=1147335735]
+script = ExtResource("1_lmkpm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1799369993]
+position = Vector2(-1.0000038, 2.000002)
+scale = Vector2(2.7807693, 4.3257575)
+sprite_frames = SubResource("SpriteFrames_xjera")
+frame_progress = 0.3529529

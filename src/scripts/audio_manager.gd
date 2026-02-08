@@ -11,6 +11,7 @@ extends Node
 @onready var respiracion = $SFX/Respiracion
 @onready var mate = $SFX/MateEnCasa
 @onready var lose = $LoseGameOver
+@onready var car = $SFX/Autito
 
 #-----------------------------------------------------------------------------
 #MUSICA DEL JUEGO
@@ -95,3 +96,10 @@ func lose_play():
 
 func lose_stop():
 	lose.stop()
+	
+func autito_play():
+	if not car.playing:
+		car.play()
+
+func autito_stop():
+	car.stop()

@@ -1,10 +1,16 @@
 extends Control
-@onready var anim = $Animation
-@onready var retry_button = $MarginBack/Back
 
+@onready var anim = $AnimatedSprite2D
+@onready var retry_button = $MarginBack/Back
 func _ready() -> void:
-	retry_button.grab_focus()
+	visible = true
+
+	if not is_node_ready():
+		await ready
+
 	anim.play("idle")
+
+	retry_button.grab_focus()
 	AudioManager.lose_play()
 	
 

@@ -2,35 +2,35 @@
 
 [ext_resource type="Theme" uid="uid://cm163xl53x0ik" path="res://src/assets/theme/maskyfox_theme.tres" id="1_51kpw"]
 [ext_resource type="Script" uid="uid://c62iy61vy2axc" path="res://src/scenes/levels/lose.gd" id="1_xoewe"]
-[ext_resource type="Texture2D" uid="uid://coqdhasct45ds" path="res://src/assets/game over screen-Sheet.png" id="2_i3kbb"]
+[ext_resource type="Texture2D" uid="uid://b5fqw255gbo6c" path="res://src/assets/game over screen-Sheet - v2.png" id="2_i3kbb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6jv8c"]
 atlas = ExtResource("2_i3kbb")
-region = Rect2(0, 0, 641, 360)
+region = Rect2(0, 0, 350, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7yayn"]
 atlas = ExtResource("2_i3kbb")
-region = Rect2(641, 0, 641, 360)
+region = Rect2(350, 0, 350, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yffu4"]
 atlas = ExtResource("2_i3kbb")
-region = Rect2(1282, 0, 641, 360)
+region = Rect2(700, 0, 350, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd3nr"]
 atlas = ExtResource("2_i3kbb")
-region = Rect2(1923, 0, 641, 360)
+region = Rect2(1050, 0, 350, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdygd"]
 atlas = ExtResource("2_i3kbb")
-region = Rect2(2564, 0, 641, 360)
+region = Rect2(1400, 0, 350, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugmrj"]
 atlas = ExtResource("2_i3kbb")
-region = Rect2(3205, 0, 641, 360)
+region = Rect2(1750, 0, 350, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpgsx"]
 atlas = ExtResource("2_i3kbb")
-region = Rect2(3846, 0, 641, 360)
+region = Rect2(2100, 0, 350, 360)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0p6s5"]
 animations = [{
@@ -94,12 +94,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xoewe")
 
-[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1732190822]
-position = Vector2(317.99994, 184.00002)
-scale = Vector2(1.0553823, 1.0583333)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1255707907]
+position = Vector2(325.5, 182)
+scale = Vector2(1.8771429, 1.0611111)
 sprite_frames = SubResource("SpriteFrames_0p6s5")
 animation = &"idle"
-frame_progress = 0.7155746
+frame_progress = 0.8626492
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1667124974]
 layout_mode = 1

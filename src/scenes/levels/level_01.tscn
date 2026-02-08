@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dimcempgdq3vq" path="res://src/assets/plantas.png" id="9_n0kxv"]
 [ext_resource type="PackedScene" uid="uid://b5yv5dlvqhh8t" path="res://src/scenes/ui/hud.tscn" id="10_8bfcq"]
 [ext_resource type="PackedScene" uid="uid://bxxl6bnb7f08a" path="res://src/scenes/enemies/enemy_ball.tscn" id="13_mc7rl"]
+[ext_resource type="PackedScene" uid="uid://qybxiq0stohe" path="res://src/scenes/entities/card.tscn" id="14_vjvdn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4p46a"]
 load_path = "res://.godot/imported/preview.png-9e77e22c16ae01e385eed8e15d88bccd.ctex"
@@ -5094,13 +5095,13 @@ texture = ExtResource("9_n0kxv")
 sources/0 = SubResource("TileSetAtlasSource_srko8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naqav"]
-size = Vector2(8633, 150)
+size = Vector2(8633, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo748"]
 size = Vector2(8672, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbvuf"]
-size = Vector2(659, 773)
+size = Vector2(659, 531.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bfcq"]
 size = Vector2(726, 598)
@@ -5328,12 +5329,15 @@ offset_bottom = 609.0
 [node name="Player" parent="." unique_id=1830401875 instance=ExtResource("4_yfpvf")]
 position = Vector2(-168, 438)
 
-[node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967 node_paths=PackedStringArray("marker_top", "marker_bottom")]
+[node name="SpawnArea" type="Node2D" parent="." unique_id=2012504967 node_paths=PackedStringArray("marker_top", "marker_bottom", "marker_calle")]
 script = ExtResource("5_yfpvf")
 enemy_crowd = ExtResource("6_naqav")
 enemy_ball = ExtResource("13_mc7rl")
 marker_top = NodePath("Top")
 marker_bottom = NodePath("Bottom")
+enemy_auto = ExtResource("14_vjvdn")
+marker_calle = NodePath("../SpawnCard/marker_Calle")
+auto_spawn_interval = 5.0
 
 [node name="Top" type="Marker2D" parent="SpawnArea" unique_id=475651208]
 unique_name_in_owner = true
@@ -5358,13 +5362,12 @@ offset_bottom = 531.0
 color = Color(0, 0, 0, 0.57254905)
 
 [node name="Limits" type="Node2D" parent="." unique_id=413434501]
-visible = false
 
 [node name="limit_bottom" type="StaticBody2D" parent="Limits" unique_id=456150569]
 position = Vector2(-8, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/limit_bottom" unique_id=750311687]
-position = Vector2(3495, 600)
+position = Vector2(3495, 539)
 shape = SubResource("RectangleShape2D_naqav")
 debug_color = Color(0, 0.6, 0.69803923, 0.21568628)
 
@@ -5378,7 +5381,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0.101960786)
 [node name="limit_left" type="StaticBody2D" parent="Limits" unique_id=1608971730]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/limit_left" unique_id=175969536]
-position = Vector2(-555, 397)
+position = Vector2(-555, 276.25)
 shape = SubResource("RectangleShape2D_lbvuf")
 
 [node name="limit_right" type="StaticBody2D" parent="Limits" unique_id=1502115393]
@@ -5397,5 +5400,10 @@ position = Vector2(-3, -1)
 position = Vector2(5908, 383.9375)
 shape = SubResource("RectangleShape2D_4p46a")
 debug_color = Color(0.6562706, 0.51439816, 0.13589883, 0.41960785)
+
+[node name="SpawnCard" type="Node2D" parent="." unique_id=1074468398]
+
+[node name="marker_Calle" type="Marker2D" parent="SpawnCard" unique_id=1052658396]
+position = Vector2(409, 582)
 
 [connection signal="body_entered" from="Limits/Area2D" to="." method="_on_area_2d_body_entered"]

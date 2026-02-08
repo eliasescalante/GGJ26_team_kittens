@@ -5,6 +5,10 @@ extends Node2D
 @export var marker_top: Marker2D
 @export var marker_bottom: Marker2D
 
+@export var enemy_auto: PackedScene
+@export var marker_calle: Marker2D
+@export var auto_spawn_interval := 7.0
+
 @export var ball_spawn_interval := 5.0
 
 @export var initial_spawn_interval: float = 6.0 
@@ -13,6 +17,8 @@ extends Node2D
 
 var spawn_lock := false
 var spawn_lock_timer := 0.0
+
+var auto_timer := 0.0
 
 var ball_timer := 0.0
 var current_spawn_interval: float = 6.0
@@ -55,7 +61,22 @@ func _process(delta):
 		ball_timer = 0.0
 		spawn_ball()
 		lock_spawns(get_ball_lock_time())
+	
+	# SPAWN AUTITO (Decorativo)
+	auto_timer += delta
+	if auto_timer >= auto_spawn_interval:
+		auto_timer = 0.0
+		spawn_auto_decorativo()
 
+func spawn_auto_decorativo():
+	if not enemy_auto or player == null or not marker_calle:
+		return
+	var instance = enemy_auto.instantiate()
+	var offset = (get_viewport_rect().size.x / 2.0) + 350 
+	# X: Posición del player + offset | Y: La posición global de tu Marker2D
+	instance.global_position = Vector2( player.global_position.x + offset, marker_calle.global_position.y)
+	# Lo agregas a la escena actual para que no se mueva pegado al spawner
+	get_tree().current_scene.add_child(instance)
 
 func spawn_ball():
 	if not enemy_ball or player == null:

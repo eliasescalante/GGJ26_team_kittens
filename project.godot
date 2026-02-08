@@ -20,7 +20,7 @@ run/main_scene="uid://bphyccs28s8db"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/stretch_mode=0
 boot_splash/image="uid://cuirya38hwm0m"
-config/icon="res://icon.svg"
+config/icon="uid://chafyq2osyscm"
 
 [autoload]
 

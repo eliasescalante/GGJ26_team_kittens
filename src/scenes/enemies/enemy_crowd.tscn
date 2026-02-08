@@ -27,10 +27,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f38iy"]
-size = Vector2(184, 161)
+size = Vector2(184, 142)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03q87"]
-size = Vector2(185, 164)
+size = Vector2(185, 143)
 
 [node name="EnemyCrowd" type="CharacterBody2D" unique_id=522095181]
 collision_layer = 2
@@ -45,13 +45,13 @@ animation = &"crowd"
 frame_progress = 0.4198076
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842373968]
-position = Vector2(0, 7.5)
+position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_f38iy")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1479080708]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=137146056]
-position = Vector2(-0.5, 7)
+position = Vector2(-0.5, 17.5)
 shape = SubResource("RectangleShape2D_03q87")
 debug_color = Color(0.8922174, 0.16636124, 0.6840652, 0.41960785)
 

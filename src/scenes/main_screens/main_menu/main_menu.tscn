@@ -166,6 +166,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7nhe2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8rfqw")
 text = "BUTTON_START"
 
+[node name="Options" type="Button" parent="HBoxContainer/Margin/PanelContainer/VBox" unique_id=900363123]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Opciones"
+
 [node name="Credits" type="Button" parent="HBoxContainer/Margin/PanelContainer/VBox" unique_id=878834629]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -181,11 +186,6 @@ theme = ExtResource("1_12k4a")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqiv2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lmhnw")
 text = "BUTTON_EXIT"
-
-[node name="Button" type="Button" parent="HBoxContainer/Margin/PanelContainer/VBox" unique_id=900363123]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "OPCIONES"
 
 [node name="Title" type="Label" parent="HBoxContainer" unique_id=1470360662]
 custom_minimum_size = Vector2(0, 70)
@@ -209,6 +209,6 @@ sprite_frames = SubResource("SpriteFrames_lmhnw")
 frame_progress = 0.007707303
 
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Options" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="HBoxContainer/Margin/PanelContainer/VBox/Button" to="." method="_on_button_pressed"]

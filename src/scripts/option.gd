@@ -4,19 +4,19 @@ extends Control
 @onready var difficulty_button: OptionButton = $OptionButton
 @onready var back_button: Button = $BackButton
 
+
 func _ready():
 	setup_difficulty()
 
-	# ESPERAR 1 FRAME (clave para mobile web)
+	# Esperar 1 frame (importante para web/mobile)
 	await get_tree().process_frame
 
-	if FileAccess.file_exists("user://settings.cfg"):
-		load_settings()
-	else:
-		volume_slider.value = 0.5
-		difficulty_button.select(1)
-		GameManager.set_difficulty(GameManager.Difficulty.NORMAL)
-		save_settings()
+	# 🎯 valores por defecto SIEMPRE
+	volume_slider.value = 0.5
+	difficulty_button.select(GameManager.Difficulty.NORMAL)
+
+	GameManager.set_difficulty(GameManager.Difficulty.NORMAL)
+	GameManager.set_master_volume(0.5)
 
 	volume_slider.grab_focus()
 
@@ -28,19 +28,18 @@ func _ready():
 func setup_difficulty():
 	difficulty_button.clear()
 
-	difficulty_button.add_item("Fácil", 0)
-	difficulty_button.add_item("Normal", 1)
-	difficulty_button.add_item("Hardcore", 2)
+	difficulty_button.add_item("Fácil", GameManager.Difficulty.EASY)
+	difficulty_button.add_item("Normal", GameManager.Difficulty.NORMAL)
+	difficulty_button.add_item("Hardcore", GameManager.Difficulty.HARDCORE)
+
 
 func _on_volume_changed(value):
-	var db = lerp(-30.0, 6.0, value)
-	AudioServer.set_bus_volume_db(0, db)
-	save_settings()
+	GameManager.set_master_volume(value)
+
 
 func _on_difficulty_selected(index):
 	GameManager.set_difficulty(index)
 	print("dificultad seleccionada:", index)
-	save_settings()
 
 
 func _unhandled_input(event):
@@ -48,6 +47,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		_on_back_button_pressed()
 
+	# 🎮 control del slider con teclado / gamepad
 	if volume_slider.has_focus():
 
 		if event.is_action_pressed("ui_left"):
@@ -56,6 +56,7 @@ func _unhandled_input(event):
 		if event.is_action_pressed("ui_right"):
 			volume_slider.value += 0.05
 
+	# 🎮 control del OptionButton con teclado / gamepad
 	if difficulty_button.has_focus():
 
 		if event.is_action_pressed("ui_left"):
@@ -68,20 +69,6 @@ func _unhandled_input(event):
 			difficulty_button.select(new_index)
 			_on_difficulty_selected(new_index)
 
-func save_settings():
-	var config = ConfigFile.new()
-
-	config.set_value("audio", "volume", volume_slider.value)
-	config.save("user://settings.cfg")
-
-func load_settings():
-	var config = ConfigFile.new()
-
-	if config.load("user://settings.cfg") != OK:
-		return
-
-	var vol = config.get_value("audio", "volume", 0.5)
-	volume_slider.value = vol
 
 func _on_back_button_pressed() -> void:
 	AudioManager.boton_menu_play()

@@ -1,21 +1,23 @@
 [gd_scene format=3 uid="uid://ck8duk3o6pumv"]
 
 [ext_resource type="Script" uid="uid://dnksajciyvdtb" path="res://src/scripts/player.gd" id="1_swhsd"]
+[ext_resource type="Shader" uid="uid://cml6nntrckatt" path="res://src/assets/player.gdshader" id="2_lh6av"]
 [ext_resource type="Texture2D" uid="uid://q2aows5a4n5k" path="res://src/assets/player fox-Sheet-Sheet.png" id="2_qopur"]
 [ext_resource type="Texture2D" uid="uid://10o51pn6d6n7" path="res://src/assets/player fox-Sheet-maskdamage-idle.png" id="3_6gf5d"]
 [ext_resource type="Texture2D" uid="uid://b1e2r0yju2bhy" path="res://src/assets/player fox-Sheet-walk.png" id="3_n52bt"]
 [ext_resource type="Texture2D" uid="uid://bc1i85214lko1" path="res://src/assets/player fox-Sheet-maskdamage.png" id="4_cx3ie"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ap8y"]
+shader = ExtResource("2_lh6av")
+
 [sub_resource type="Shader" id="Shader_qopur"]
 code = "shader_type canvas_item;
 
-// Cambiamos 'hint_color' por 'source_color'
 uniform vec4 flash_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
 
 void fragment() {
     vec4 color = texture(TEXTURE, UV);
-    // Mezclamos el color original con el color del flash basado en la intensidad
     color.rgb = mix(color.rgb, flash_color.rgb, flash_amount);
     COLOR = vec4(color.rgb, color.a);
 }"
@@ -181,7 +183,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n52bt"]
-size = Vector2(59, 32)
+size = Vector2(58.5, 30)
 
 [sub_resource type="Animation" id="Animation_cx3ie"]
 length = 0.001
@@ -248,6 +250,14 @@ _data = {
 collision_mask = 13
 script = ExtResource("1_swhsd")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=583795899]
+material = SubResource("ShaderMaterial_6ap8y")
+offset_left = -22.0
+offset_top = 23.0
+offset_right = 35.0
+offset_bottom = 38.0
+color = Color(0.03529412, 0.03529412, 0.03529412, 0.6313726)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1189423300]
 material = SubResource("ShaderMaterial_cx3ie")
 position = Vector2(0, 4.7683716e-07)
@@ -257,7 +267,7 @@ animation = &"idle_3"
 frame_progress = 0.66072416
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1212633496]
-position = Vector2(0.5, 12)
+position = Vector2(6.75, 25)
 shape = SubResource("RectangleShape2D_n52bt")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1836736775]

@@ -14,6 +14,8 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var camera: Camera2D = $Camera2D
+@onready var sprite_mat: ShaderMaterial = anim.material
+
 
 var shake_timer: float = 0.0
 
@@ -60,7 +62,7 @@ func take_hit(amount):
 	shake_timer = shake_duration
 
 	if animation:
-		animation.play("hit_flash")
+		play_flash(Color.WHITE)
 		await animation.animation_finished
 		animation.play("RESET")
 
@@ -101,6 +103,10 @@ func play_hit_feedback():
 	shake_timer = shake_duration
 
 	if animation:
-		animation.play("hit_flash")
+		play_flash(Color(1, 0.2, 0.2))
 		await animation.animation_finished
 		animation.play("RESET")
+
+func play_flash(color: Color) -> void:
+	sprite_mat.set_shader_parameter("flash_color", color)
+	animation.play("hit_flash")
